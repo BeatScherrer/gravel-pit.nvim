@@ -9,3 +9,5 @@ for key, value in pairs(config.italics) do
 		styles[key] = "NONE"
 	end
 end
+
+return styles

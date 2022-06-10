@@ -7,32 +7,32 @@ theme.loadSyntax = function()
 	-- Syntax highlight groups
 
 	local syntax = {
-		Type = { fg = "#FF0000" }, -- int, long, char, etc.
+		Type = { fg = colors.red }, -- int, long, char, etc.
 		StorageClass = { fg = colors.cyan }, -- static, register, volatile, etc.
-		Structure = { fg = colors.puple }, -- struct, union, enum, etc.
+		Structure = { fg = colors.bright_yellow }, -- struct, union, enum, etc.
 		Comment = { fg = colors.comments, style = styles.comments }, -- italic comments
 		SpecialComment = { fg = colors.comments, style = styles.comments }, -- special things inside a comment
-		Conditional = { fg = colors.purple, style = styles.keywords }, -- italic if, then, else, endif, switch, etc.
+		Conditional = { fg = colors.red, style = styles.keywords }, -- italic if, then, else, endif, switch, etc.
 		Constant = { fg = colors.yellow }, -- any constant
 		Character = { fg = colors.orange }, -- any character constant: 'c', '\n'
-		Number = { fg = colors.orange }, -- a number constant: 5
-		Boolean = { fg = colors.orange }, -- a boolean constant: TRUE, false
-		Float = { fg = colors.orange }, -- a floating point constant: 2.3e10
+		Number = { fg = colors.bright_yellow }, -- a number constant: 5
+		Boolean = { fg = colors.yellow }, -- a boolean constant: TRUE, false
+		Float = { fg = colors.yellow }, -- a floating point constant: 2.3e10
 		Function = { fg = colors.blue, style = styles.functions }, -- italic funtion names
 		Identifier = { fg = colors.fg, style = styles.variables }, -- any variable name
-		Statement = { fg = colors.cyan }, -- any statement
+		Statement = { fg = colors.bright_yellow }, -- any statement
 		Keyword = { fg = colors.purple, style = styles.keywords }, -- italic for, do, while, etc.
-		Label = { fg = colors.purple }, -- case, default, etc.
+		Label = { fg = colors.red }, -- case, default, etc.
 		Operator = { fg = colors.cyan }, -- sizeof", "+", "*", etc.
 		Exception = { fg = colors.red }, -- try, catch, throw
-		PreProc = { fg = colors.purple }, -- generic Preprocessor
-		Include = { fg = colors.blue }, -- preprocessor #include
-		Define = { fg = colors.pink }, -- preprocessor #define
-		Macro = { fg = colors.cyan }, -- same as Define
+		PreProc = { fg = colors.red }, -- generic Preprocessor
+		Include = { fg = colors.red }, -- preprocessor #include
+		Define = { fg = colors.red }, -- preprocessor #define
+		Macro = { fg = colors.red }, -- same as Define
 		Typedef = { fg = colors.red }, -- A typedef
-		PreCondit = { fg = colors.cyan }, -- preprocessor #if, #else, #endif, etc.
+		PreCondit = { fg = colors.red }, -- preprocessor #if, #else, #endif, etc.
 		Repeat = { fg = colors.purple, style = styles.keywords }, -- italic any other keyword
-		String = { fg = colors.green, style = styles.strings }, -- any string
+		String = { fg = colors.cyan, style = styles.strings }, -- any string
 		Special = { fg = colors.red }, -- any special symbol
 		SpecialChar = { fg = colors.disabled }, -- special character in a constant
 		Tag = { fg = colors.red }, -- you can use CTRL-] on this
@@ -116,7 +116,7 @@ theme.loadEditor = function()
 		CursorLine = { fg = colors.none, bg = colors.bg_cur }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		-- ToolbarLine =			{ fg = colors.fg, bg = colors.bg_alt },
 		-- ToolbarButton =			{ fg = colors.fg, style = 'bold' },
-		NormalMode = { fg = colors.accent }, -- Normal mode message in the cmdline
+		NormalMode = { fg = colors.comments }, -- Normal mode message in the cmdline
 		InsertMode = { fg = colors.green }, -- Insert mode message in the cmdline
 		ReplacelMode = { fg = colors.red }, -- Replace mode message in the cmdline
 		VisualMode = { fg = colors.purple }, -- Visual mode message in the cmdline
@@ -144,20 +144,20 @@ end
 
 theme.loadTerminal = function()
 	vim.g.terminal_color_0 = colors.black
-	vim.g.terminal_color_1 = colors.darkred
-	vim.g.terminal_color_2 = colors.darkgreen
-	vim.g.terminal_color_3 = colors.darkyellow
-	vim.g.terminal_color_4 = colors.darkblue
-	vim.g.terminal_color_5 = colors.darkpurple
-	vim.g.terminal_color_6 = colors.darkcyan
+	vim.g.terminal_color_1 = colors.red
+	vim.g.terminal_color_2 = colors.green
+	vim.g.terminal_color_3 = colors.yellow
+	vim.g.terminal_color_4 = colors.blue
+	vim.g.terminal_color_5 = colors.magenta
+	vim.g.terminal_color_6 = colors.cyan
 	vim.g.terminal_color_7 = colors.white
 	vim.g.terminal_color_8 = colors.disabled
-	vim.g.terminal_color_9 = colors.red
-	vim.g.terminal_color_10 = colors.green
-	vim.g.terminal_color_11 = colors.yellow
-	vim.g.terminal_color_12 = colors.blue
-	vim.g.terminal_color_13 = colors.purple
-	vim.g.terminal_color_14 = colors.cyan
+	vim.g.terminal_color_9 = colors.bright_red
+	vim.g.terminal_color_10 = colors.bright_green
+	vim.g.terminal_color_11 = colors.bright_yellow
+	vim.g.terminal_color_12 = colors.bright_blue
+	vim.g.terminal_color_13 = colors.bright_magenta
+	vim.g.terminal_color_14 = colors.bright_cyan
 	vim.g.terminal_color_15 = colors.white
 end
 
@@ -173,32 +173,32 @@ theme.loadTreeSitter = function()
 		TSConstructor = { fg = colors.blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = colors.yellow }, -- For constants
 		TSConstBuiltin = { fg = colors.orange }, -- For constant that are built in the language: `nil` in Lua.
-		TSConstMacro = { fg = colors.cyan }, -- For constants that are defined by macros: `NULL` in C.
+		TSConstMacro = { fg = colors.red }, -- For constants that are defined by macros: `NULL` in C.
 		TSError = { fg = colors.error }, -- For syntax/parser errors.
 		TSException = { fg = colors.red }, -- For exception related keywords.
 		TSField = { fg = colors.fg }, -- For fields.
 		TSFloat = { fg = colors.orange }, -- For floats.
 		TSFunction = { fg = colors.blue, style = styles.functions }, -- For fuction (calls and definitions).
 		TSFuncBuiltin = { fg = colors.cyan, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
-		TSFuncMacro = { fg = colors.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		TSInclude = { fg = colors.cyan }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSKeyword = { fg = colors.cyan, style = styles.keywords }, -- For keywords that don't fall in previous categories.
+		TSFuncMacro = { fg = colors.red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		TSInclude = { fg = colors.red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSKeyword = { fg = colors.bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = colors.purple, style = styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = colors.purple }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		TSKeywordReturn = { fg = colors.cyan }, -- return keyword
 		TSLabel = { fg = colors.red }, -- For labels: `label:` in C and `:label:` in Lua.
-		TSMethod = { fg = colors.blue, style = styles.functions }, -- For method calls and definitions.
-		TSNamespace = { fg = colors.yellow }, -- For identifiers referring to modules and namespaces.
+		TSMethod = { fg = colors.bright_green, style = styles.functions }, -- For method calls and definitions.
+		TSNamespace = { fg = colors.bright_yellow }, -- For identifiers referring to modules and namespaces.
 		TSNumber = { fg = colors.orange }, -- For all numbers
 		TSOperator = { fg = colors.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter = { fg = colors.paleblue }, -- For parameters of a function.
-		TSParameterReference = { fg = colors.paleblue }, -- For references to parameters of a function.
-		TSProperty = { fg = colors.gray }, -- Same as `TSField`,accesing for struct members in C.
+		TSParameter = { fg = colors.yellow }, -- For parameters of a function.
+		TSParameterReference = { fg = colors.yellow }, -- For references to parameters of a function.
+		TSProperty = { fg = colors.bright_green }, -- Same as `TSField`,accesing for struct members in C.
 		TSPunctDelimiter = { fg = colors.cyan }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = colors.cyan }, -- For brackets and parens.
 		TSPunctSpecial = { fg = colors.cyan }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = colors.purple, style = styles.keywords }, -- For keywords related to loops.
-		TSString = { fg = colors.green, styles = styles.strings }, -- For strings.
+		TSString = { fg = colors.cyan, styles = styles.strings }, -- For strings.
 		TSStringRegex = { fg = colors.yellow }, -- For regexes.
 		TSStringEscape = { fg = colors.text }, -- For escape characters within a string.
 		TSSymbol = { fg = colors.yellow }, -- For identifiers referring to symbols or atoms.

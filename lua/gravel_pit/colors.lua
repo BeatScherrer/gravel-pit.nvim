@@ -2,6 +2,14 @@ local colors = {
 	fg = "#c5c8c6",
 	bg = "#1d1f21",
 
+	comments = "#555b65",
+
+	line_numbers = "#424242",
+	selection = "#404040",
+	border = "#343434",
+
+	none = "NONE",
+
 	-- terminal colors
 	black = "#282a2e",
 	bright_black = "#555b65",
@@ -19,6 +27,6 @@ local colors = {
 	bright_magenta = "#b294bb",
 	cyan = "#5e8d87",
 	bright_cyan = "#8abeb7",
-
-	none = "NONE",
 }
+
+return colors
