@@ -173,39 +173,39 @@ theme.loadTreeSitter = function()
 		TSConstructor = { fg = colors.blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = colors.yellow }, -- For constants
 		TSConstBuiltin = { fg = colors.orange }, -- For constant that are built in the language: `nil` in Lua.
-		TSConstMacro = { fg = colors.red }, -- For constants that are defined by macros: `NULL` in C.
+		TSConstMacro = { fg = colors.bright_red }, -- For constants that are defined by macros: `NULL` in C.
 		TSError = { fg = colors.error }, -- For syntax/parser errors.
 		TSException = { fg = colors.red }, -- For exception related keywords.
-		TSField = { fg = colors.fg }, -- For fields.
+		TSField = { fg = colors.bright_green }, -- For fields.
 		TSFloat = { fg = colors.orange }, -- For floats.
 		TSFunction = { fg = colors.blue, style = styles.functions }, -- For fuction (calls and definitions).
 		TSFuncBuiltin = { fg = colors.cyan, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
-		TSFuncMacro = { fg = colors.red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		TSInclude = { fg = colors.red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSFuncMacro = { fg = colors.bright_red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		TSInclude = { fg = colors.bright_red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = colors.bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = colors.purple, style = styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = colors.purple }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-		TSKeywordReturn = { fg = colors.cyan }, -- return keyword
-		TSLabel = { fg = colors.red }, -- For labels: `label:` in C and `:label:` in Lua.
+		TSKeywordReturn = { fg = colors.bright_red }, -- return keyword
+		TSLabel = { fg = colors.bright_red }, -- For labels: `label:` in C and `:label:` in Lua.
 		TSMethod = { fg = colors.bright_green, style = styles.functions }, -- For method calls and definitions.
 		TSNamespace = { fg = colors.bright_yellow }, -- For identifiers referring to modules and namespaces.
 		TSNumber = { fg = colors.orange }, -- For all numbers
-		TSOperator = { fg = colors.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
+		TSOperator = { fg = colors.bright_red }, -- For any operator: `+`, but also `->` and `*` in C.
 		TSParameter = { fg = colors.yellow }, -- For parameters of a function.
 		TSParameterReference = { fg = colors.yellow }, -- For references to parameters of a function.
 		TSProperty = { fg = colors.bright_green }, -- Same as `TSField`,accesing for struct members in C.
-		TSPunctDelimiter = { fg = colors.cyan }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = colors.cyan }, -- For brackets and parens.
-		TSPunctSpecial = { fg = colors.cyan }, -- For special punctutation that does not fall in the catagories before.
+		TSPunctDelimiter = { fg = colors.bright_yellow }, -- For delimiters ie: `.`
+		TSPunctBracket = { fg = colors.fg }, -- For brackets and parens.
+		TSPunctSpecial = { fg = colors.fg }, -- For special punctutation that does not fall in the catagories before.
 		TSRepeat = { fg = colors.purple, style = styles.keywords }, -- For keywords related to loops.
 		TSString = { fg = colors.cyan, styles = styles.strings }, -- For strings.
 		TSStringRegex = { fg = colors.yellow }, -- For regexes.
 		TSStringEscape = { fg = colors.text }, -- For escape characters within a string.
 		TSSymbol = { fg = colors.yellow }, -- For identifiers referring to symbols or atoms.
 		TSStrong = { fg = colors.paleblue, style = "bold" }, -- Text to be represented in bold.
-		TSType = { fg = colors.purple }, -- For types.
-		TSTypeBuiltin = { fg = colors.red }, -- For builtin types.
-		TSTag = { fg = colors.red }, -- Tags like html tag names.
+		TSType = { fg = colors.green }, -- For types.
+		TSTypeBuiltin = { fg = colors.green }, -- For builtin types.
+		TSTag = { fg = colors.bright_red }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = colors.cyan }, -- Tag delimiter like `<` `>` `/`
 		TSTagAttribute = { fg = colors.gray }, -- HTML tag attributes.
 		TSText = { fg = colors.fg }, -- For strings considered text in a markup language.
@@ -370,13 +370,13 @@ theme.loadPlugins = function()
 		NvimTreeFolderName = { fg = colors.blue, style = "bold" },
 		NvimTreeFolderIcon = { fg = colors.blue, style = "bold" },
 		NvimTreeEmptyFolderName = { fg = colors.gray },
-		NvimTreeOpenedFolderName = { fg = colors.green, style = "bold" },
+		NvimTreeOpenedFolderName = { fg = colors.cyan, style = "bold" },
 		NvimTreeIndentMarker = { fg = colors.disabled },
 		NvimTreeGitDirty = { fg = colors.blue },
-		NvimTreeGitNew = { fg = colors.green },
+		NvimTreeGitNew = { fg = colors.bright_green },
 		NvimTreeGitStaged = { fg = colors.fg },
 		NvimTreeGitDeleted = { fg = colors.red },
-		NvimTreeOpenedFile = { fg = colors.green },
+		NvimTreeOpenedFile = { fg = colors.cyan },
 		NvimTreeImageFile = { fg = colors.yellow },
 		NvimTreeMarkdownFile = { fg = colors.pink },
 		NvimTreeExecFile = { fg = colors.green },
@@ -443,8 +443,8 @@ theme.loadPlugins = function()
 		SneakScope = { bg = colors.selection },
 
 		-- Indent Blankline
-		IndentBlanklineChar = { fg = colors.border },
-		IndentBlanklineContextChar = { fg = colors.fg },
+		IndentBlanklineChar = { fg = colors.comments },
+		IndentBlanklineContextChar = { fg = colors.bright_yellow },
 
 		-- Nvim dap
 		DapBreakpoint = { fg = colors.red },
