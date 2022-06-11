@@ -32,7 +32,7 @@ theme.loadSyntax = function()
 		Typedef = { fg = colors.red }, -- A typedef
 		PreCondit = { fg = colors.red }, -- preprocessor #if, #else, #endif, etc.
 		Repeat = { fg = colors.purple, style = styles.keywords }, -- italic any other keyword
-		String = { fg = colors.cyan, style = styles.strings }, -- any string
+		String = { fg = colors.bright_cyan, style = styles.strings }, -- any string
 		Special = { fg = colors.red }, -- any special symbol
 		SpecialChar = { fg = colors.disabled }, -- special character in a constant
 		Tag = { fg = colors.red }, -- you can use CTRL-] on this
@@ -74,7 +74,7 @@ theme.loadEditor = function()
 		NormalNC = { fg = colors.fg, bg = colors.bg_nc }, -- normal text and background color
 		NormalFloat = { fg = colors.fg, bg = colors.float }, -- normal text and background color for floating windows
 		NormalContrast = { fg = colors.fg, bg = colors.bg_alt }, -- a help group for contrast fileypes
-		FloatBorder = { fg = colors.red, bg = colors.float }, -- floating window border
+		FloatBorder = { fg = colors.bright_yello, bg = colors.float }, -- floating window border
 		ColorColumn = { fg = colors.none, bg = colors.active }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = colors.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = colors.bg_alt, bg = colors.cursor }, -- the character under the cursor
@@ -105,7 +105,7 @@ theme.loadEditor = function()
 		SpellCap = { fg = colors.blue, style = "italic,undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { fg = colors.cyan, style = "italic,undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare = { fg = colors.purple, style = "italic,undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { fg = colors.fg, bg = colors.active }, -- status line of current window
+		StatusLine = { fg = colors.fg, bg = colors.bg }, -- status line of current window
 		StatusLineNC = { fg = colors.disabled, bg = colors.bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		StatusLineTerm = { fg = colors.fg, bg = colors.active }, -- status line of current terminal window
 		StatusLineTermNC = { fg = colors.disabled, bg = colors.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
@@ -139,8 +139,8 @@ theme.loadEditor = function()
 		DashboardCenter = { fg = colors.accent },
 		DashboardFooter = { fg = colors.green, style = "italic" },
 
-		VertSplit = { fg = colors.vsp }, -- The column separating vertically split windows
-		WinSeparator = { fg = colors.vsp }, -- Lines between window splits
+		VertSplit = { fg = colors.bright_black }, -- The column separating vertically split windows
+		WinSeparator = { fg = colors.bright_black }, -- Lines between window splits
 	}
 
 	-- Options:
@@ -296,16 +296,16 @@ theme.loadPlugins = function()
 		debugBreakpoint = { fg = colors.red, bg = colors.bg },
 
 		-- Trouble
-		TroubleText = { fg = colors.text, bg = colors.sidebar },
-		TroubleCount = { fg = colors.purple, bg = colors.sidebar },
-		TroubleNormal = { fg = colors.fg, bg = colors.sidebar },
-		TroubleSignError = { fg = colors.error, bg = colors.sidebar },
-		TroubleSignWarning = { fg = colors.yellow, bg = colors.sidebar },
-		TroubleSignInformation = { fg = colors.paleblue, bg = colors.sidebar },
-		TroubleSignHint = { fg = colors.purple, bg = colors.sidebar },
-		TroubleFoldIcon = { fg = colors.accent, bg = colors.sidebar },
-		TroubleIndent = { fg = colors.border, bg = colors.sidebar },
-		TroubleLocation = { fg = colors.disabled, bg = colors.sidebar },
+		-- TroubleText = { fg = colors.text, bg = colors.sidebar },
+		-- TroubleCount = { fg = colors.purple, bg = colors.sidebar },
+		-- TroubleNormal = { fg = colors.fg, bg = colors.sidebar },
+		-- TroubleSignError = { fg = colors.error, bg = colors.sidebar },
+		-- TroubleSignWarning = { fg = colors.yellow, bg = colors.sidebar },
+		-- TroubleSignInformation = { fg = colors.paleblue, bg = colors.sidebar },
+		-- TroubleSignHint = { fg = colors.purple, bg = colors.sidebar },
+		-- TroubleFoldIcon = { fg = colors.accent, bg = colors.sidebar },
+		-- TroubleIndent = { fg = colors.border, bg = colors.sidebar },
+		-- TroubleLocation = { fg = colors.disabled, bg = colors.sidebar },
 
 		-- Nvim-Cmp
 		CmpItemAbbrMatch = { fg = colors.paleblue, style = "bold" },
@@ -336,7 +336,7 @@ theme.loadPlugins = function()
 		diffIndexLine = { fg = colors.purple },
 
 		-- Neogit
-		NeogitBranch = { fg = colors.paleblue },
+		NeogitBranch = { fg = colors.cyan },
 		NeogitRemote = { fg = colors.purple },
 		NeogitHunkHeader = { fg = colors.fg, bg = colors.highlight },
 		NeogitHunkHeaderHighlight = { fg = colors.blue, bg = colors.contrast },
@@ -366,7 +366,7 @@ theme.loadPlugins = function()
 		TelescopeResultsBorder = { fg = colors.border, bg = colors.float },
 		TelescopePreviewBorder = { fg = colors.border, bg = colors.float },
 		TelescopeSelectionCaret = { fg = colors.purple },
-		TelescopeSelection = { fg = colors.purple, bg = colors.active },
+		TelescopeSelection = { fg = colors.bg, bg = colors.bright_cyan },
 		TelescopeMatching = { fg = colors.cyan },
 
 		-- NvimTree
