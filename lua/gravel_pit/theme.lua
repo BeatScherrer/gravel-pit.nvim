@@ -41,7 +41,7 @@ theme.loadSyntax = function()
 		Underlined = { fg = colors.link, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = colors.disabled }, -- left blank, hidden
 		Error = { fg = colors.error, style = "bold,underline" }, -- any erroneous construct
-		Todo = { fg = colors.bright_yellow, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO HACK FIXME and XXX
+		Todo = { fg = colors.cyan, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO HACK FIXME and XXX
 
 		htmlLink = { fg = colors.link, style = "underline" },
 		htmlH1 = { fg = colors.cyan, style = "bold" },
@@ -89,7 +89,7 @@ theme.loadEditor = function()
 		FoldColumn = { fg = colors.blue }, -- 'foldcolumn'
 		IncSearch = { fg = colors.title, bg = colors.selection, style = "underline" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		LineNr = { fg = colors.line_numbers, bg = colors.bg_num }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr = { fg = colors.bright_yellow, bg = colors.bg_num }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		CursorLineNr = { fg = colors.bright_yellow, bg = colors.bg_num}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen = { fg = colors.yellow, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = colors.accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MoreMsg = { fg = colors.accent }, -- |more-prompt|
@@ -98,7 +98,7 @@ theme.loadEditor = function()
 		Question = { fg = colors.green }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { fg = colors.highlight, bg = colors.title, style = "reverse" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		qfLineNr = { fg = colors.highlight, bg = colors.title, style = "reverse" }, -- Line numbers for quickfix lists
-		Search = { fg = colors.bg, bg = colors.bright_cyan, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search = { fg = colors.bg, bg = colors.cyan, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn = { fg = colors.fg, bg = colors.bg_sign },
 		SpecialKey = { fg = colors.purple }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { fg = colors.red, style = "italic,undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -110,7 +110,7 @@ theme.loadEditor = function()
 		StatusLineTerm = { fg = colors.fg, bg = colors.active }, -- status line of current terminal window
 		StatusLineTermNC = { fg = colors.disabled, bg = colors.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLineFill = { fg = colors.fg }, -- tab pages line, where there are no labels
-		TablineSel = { fg = colors.bg, bg = colors.accent }, -- tab pages line, active tab page label
+		TablineSel = { fg = colors.cyan, bg = colors.accent }, -- tab pages line, active tab page label
 		Tabline = { fg = colors.fg },
 		Title = { fg = colors.title, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { fg = colors.none, bg = colors.selection }, -- Visual mode selection
@@ -366,17 +366,17 @@ theme.loadPlugins = function()
 		TelescopeResultsBorder = { fg = colors.border, bg = colors.float },
 		TelescopePreviewBorder = { fg = colors.border, bg = colors.float },
 		TelescopeSelectionCaret = { fg = colors.purple },
-		TelescopeSelection = { fg = colors.bg, bg = colors.bright_cyan },
+		TelescopeSelection = { fg = colors.bg, bg = colors.cyan },
 		TelescopeMatching = { fg = colors.cyan },
 
 		-- NvimTree
 		NvimTreeNormal = { fg = colors.fg, bg = colors.sidebar },
 		NvimTreeNormalNC = { fg = colors.fg, bg = colors.sidebar },
 		NvimTreeRootFolder = { fg = colors.accent, bg = colors.sidebar },
-		NvimTreeFolderName = { fg = colors.blue, style = "bold" },
-		NvimTreeFolderIcon = { fg = colors.blue, style = "bold" },
+		NvimTreeFolderName = { fg = colors.cyan, style = "bold" },
+		NvimTreeFolderIcon = { fg = colors.cyan, style = "bold" },
 		NvimTreeEmptyFolderName = { fg = colors.gray },
-		NvimTreeOpenedFolderName = { fg = colors.cyan, style = "bold" },
+		NvimTreeOpenedFolderName = { fg = colors.bright_cyan, style = "bold" },
 		NvimTreeIndentMarker = { fg = colors.disabled },
 		NvimTreeGitDirty = { fg = colors.blue },
 		NvimTreeGitNew = { fg = colors.bright_green },
