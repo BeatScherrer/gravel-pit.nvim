@@ -10,6 +10,8 @@ template <typename T> class Example {
 public:
   Example(const T &t) : m_member(t) {}
 
+  void sayHello(const std::string &name) { std::cout << "hello!" << std::endl; }
+
   const T &get() { return m_member; }
 
 private:

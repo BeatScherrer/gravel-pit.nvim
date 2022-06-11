@@ -41,7 +41,7 @@ theme.loadSyntax = function()
 		Underlined = { fg = colors.link, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = colors.disabled }, -- left blank, hidden
 		Error = { fg = colors.error, style = "bold,underline" }, -- any erroneous construct
-		Todo = { fg = colors.yellow, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO HACK FIXME and XXX
+		Todo = { fg = colors.bright_yellow, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO HACK FIXME and XXX
 
 		htmlLink = { fg = colors.link, style = "underline" },
 		htmlH1 = { fg = colors.cyan, style = "bold" },
@@ -49,12 +49,18 @@ theme.loadSyntax = function()
 		htmlH3 = { fg = colors.green, style = "bold" },
 		htmlH4 = { fg = colors.yellow, style = "bold" },
 		htmlH5 = { fg = colors.purple, style = "bold" },
-		markdownH1 = { fg = colors.cyan, style = "bold" },
-		markdownH2 = { fg = colors.red, style = "bold" },
-		markdownH3 = { fg = colors.green, style = "bold" },
-		markdownH1Delimiter = { fg = colors.cyan },
-		markdownH2Delimiter = { fg = colors.red },
-		markdownH3Delimiter = { fg = colors.green },
+		markdownH1 = { fg = colors.bright_yellow, style = "bold" },
+		markdownH2 = { fg = colors.bright_yellow, style = "bold" },
+		markdownH3 = { fg = colors.bright_yellow, style = "bold" },
+		markdownH1Delimiter = { fg = colors.bright_yellow },
+		markdownH2Delimiter = { fg = colors.bright_yellow },
+		markdownH3Delimiter = { fg = colors.bright_yellow },
+		markdownCode = { fg = colors.bright_magenta },
+		markdownCodeDelimiter = { fg = colors.magenta },
+		markdownListMarker = { fg = colors.bright_red },
+		markdownLinkText = { fg = colors.bright_yellow },
+		markdownLink = { fg = colors.blue },
+		markdownUrl = { fg = colors.blue },
 	}
 
 	return syntax
@@ -68,7 +74,7 @@ theme.loadEditor = function()
 		NormalNC = { fg = colors.fg, bg = colors.bg_nc }, -- normal text and background color
 		NormalFloat = { fg = colors.fg, bg = colors.float }, -- normal text and background color for floating windows
 		NormalContrast = { fg = colors.fg, bg = colors.bg_alt }, -- a help group for contrast fileypes
-		FloatBorder = { fg = colors.border, bg = colors.float }, -- floating window border
+		FloatBorder = { fg = colors.red, bg = colors.float }, -- floating window border
 		ColorColumn = { fg = colors.none, bg = colors.active }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = colors.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = colors.bg_alt, bg = colors.cursor }, -- the character under the cursor
@@ -79,20 +85,20 @@ theme.loadEditor = function()
 		DiffDelete = { fg = colors.red }, -- diff mode: Deleted line
 		DiffText = { fg = colors.fg, bg = colors.bg_alt }, -- diff mode: Changed text within a changed line
 		ErrorMsg = { fg = colors.error }, -- error messages
-		Folded = { fg = colors.disabled, style = "italic" }, -- line used for closed folds
+		Folded = { fg = colors.comments, style = "italic" }, -- line used for closed folds
 		FoldColumn = { fg = colors.blue }, -- 'foldcolumn'
 		IncSearch = { fg = colors.title, bg = colors.selection, style = "underline" }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		LineNr = { fg = colors.line_numbers, bg = colors.bg_num }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr = { fg = colors.accent, bg = colors.bg_num }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		CursorLineNr = { fg = colors.bright_yellow, bg = colors.bg_num }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen = { fg = colors.yellow, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = colors.accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MoreMsg = { fg = colors.accent }, -- |more-prompt|
 		NonText = { fg = colors.disabled }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		PmenuSel = { fg = colors.contrast, bg = colors.accent }, -- Popup menu: selected item.
+		PmenuSel = { fg = colors.red, bg = colors.black }, -- Popup menu: selected item.
 		Question = { fg = colors.green }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { fg = colors.highlight, bg = colors.title, style = "reverse" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		qfLineNr = { fg = colors.highlight, bg = colors.title, style = "reverse" }, -- Line numbers for quickfix lists
-		Search = { fg = colors.title, bg = colors.selection, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search = { fg = colors.bg, bg = colors.bright_cyan, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn = { fg = colors.fg, bg = colors.bg_sign },
 		SpecialKey = { fg = colors.purple }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { fg = colors.red, style = "italic,undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -179,18 +185,18 @@ theme.loadTreeSitter = function()
 		TSField = { fg = colors.bright_green }, -- For fields.
 		TSFloat = { fg = colors.orange }, -- For floats.
 		TSFunction = { fg = colors.blue, style = styles.functions }, -- For fuction (calls and definitions).
-		TSFuncBuiltin = { fg = colors.cyan, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin = { fg = colors.blue, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro = { fg = colors.bright_red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		TSInclude = { fg = colors.bright_red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = colors.bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
 		TSKeywordFunction = { fg = colors.purple, style = styles.keywords }, -- For keywords used to define a fuction.
-		TSKeywordOperator = { fg = colors.purple }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
+		TSKeywordOperator = { fg = colors.brigth_red }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		TSKeywordReturn = { fg = colors.bright_red }, -- return keyword
 		TSLabel = { fg = colors.bright_red }, -- For labels: `label:` in C and `:label:` in Lua.
-		TSMethod = { fg = colors.bright_green, style = styles.functions }, -- For method calls and definitions.
+		TSMethod = { fg = colors.bright_blue, style = styles.functions }, -- For method calls and definitions.
 		TSNamespace = { fg = colors.bright_yellow }, -- For identifiers referring to modules and namespaces.
-		TSNumber = { fg = colors.orange }, -- For all numbers
-		TSOperator = { fg = colors.bright_red }, -- For any operator: `+`, but also `->` and `*` in C.
+		TSNumber = { fg = colors.bright_red }, -- For all numbers
+		TSOperator = { fg = colors.bright_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
 		TSParameter = { fg = colors.yellow }, -- For parameters of a function.
 		TSParameterReference = { fg = colors.yellow }, -- For references to parameters of a function.
 		TSProperty = { fg = colors.bright_green }, -- Same as `TSField`,accesing for struct members in C.

@@ -7,8 +7,12 @@ local colors = {
 	line_numbers = "#424242",
 	selection = "#404040",
 	border = "#343434",
+	highlight = "#8abeb7",
 
 	none = "NONE",
+
+	warn = "#de935f",
+	error = "#cc6666",
 
 	-- terminal colors
 	black = "#282a2e",
