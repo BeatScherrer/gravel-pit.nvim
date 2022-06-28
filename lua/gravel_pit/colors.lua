@@ -33,6 +33,10 @@ colors.DARK = {
 	bright_magenta = "#b294bb",
 	cyan = "#5e8d87",
 	bright_cyan = "#8abeb7",
+
+	diff_add = "#00ff00",
+	diff_mod = "#0000ff",
+	diff_del = "#ff0000",
 }
 
 colors.LIGHT = {
