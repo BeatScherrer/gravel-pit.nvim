@@ -5,7 +5,9 @@ package.loaded["gravel_pit.styles"] = nil
 package.loaded["gravel_pit.colors"] = nil
 package.loaded["gravel_pit.theme"] = nil
 
-require("gravel_pit.util").load()
+
+local utils = require("gravel_pit.util")
+utils.load(utils.Style.LIGHT)
 EOF
 
 function! SynStack ()

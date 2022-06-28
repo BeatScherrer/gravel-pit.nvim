@@ -7,7 +7,7 @@ return {
 		c = { bg = colors.black, fg = colors.white },
 	},
 	insert = {
-		a = { bg = colors.blue, fg = colors.black, gui = "bold" },
+		a = { bg = colors.green, fg = colors.black, gui = "bold" },
 		b = { bg = colors.cyan, fg = colors.bg },
 		c = { bg = colors.black, fg = colors.white },
 	},
@@ -17,12 +17,12 @@ return {
 		c = { bg = colors.black, fg = colors.white },
 	},
 	replace = {
-		a = { bg = colors.green, fg = colors.bg, gui = "bold" },
+		a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
 		b = { bg = colors.cyan, fg = colors.bg },
 		c = { bg = colors.black, fg = colors.white },
 	},
 	command = {
-		a = { bg = colors.green, fg = colors.black, gui = "bold" },
+		a = { bg = colors.magenta, fg = colors.black, gui = "bold" },
 		b = { bg = colors.cyan, fg = colors.bg },
 		c = { bg = colors.black, fg = colors.white },
 	},

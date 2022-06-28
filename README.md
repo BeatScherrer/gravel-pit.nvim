@@ -7,7 +7,7 @@ To install the color scheme:
 
 * packer:
   ```lang=lua
-  user({ BeatScherrer/gravel_pit.nvim})
+  use({ BeatScherrer/gravel_pit.nvim})
   ```
 > this is a citation `abc`
 

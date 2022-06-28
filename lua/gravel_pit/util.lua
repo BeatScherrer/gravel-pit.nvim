@@ -3,6 +3,11 @@ local theme = require("gravel_pit.theme")
 local config = require("gravel_pit.config").options
 -- local config = require("gravel_pit.config").options
 
+util.Style = {
+	LIGHT = "LIGHT",
+	DARK = "DARK",
+}
+
 -- Go trough the table and highlight the group with the color values
 util.highlight = function(group, color)
 	local style = color.style and "gui=" .. color.style or "gui=NONE"
@@ -68,15 +73,22 @@ util.contrast = function()
 end
 
 -- Load the theme
-function util.load()
+function util.load(style)
 	-- Set the theme environment
 	vim.cmd("hi clear")
 	if vim.fn.exists("syntax_on") then
 		vim.cmd("syntax reset")
 	end
-	vim.opt.background = "dark"
+
+	if style == util.Style.DARK then
+		vim.opt.background = "dark"
+		vim.g.colors_name = "gravel-pit-dark"
+		vim.notify("loading gravel_pit_dark")
+	elseif style == util.Style.LIGHT then
+		vim.opt.background = "light"
+		vim.g.colors_name = "gravel-pit-light"
+	end
 	vim.opt.termguicolors = true
-	vim.g.colors_name = "gravel-pit"
 	--
 	-- if config.disable.colored_cursor == false then
 	-- 	vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
@@ -86,13 +98,13 @@ function util.load()
 	-- Load plugins and custom highlights
 	local async
 
-	local function async_loader()
+	local function async_loader(style)
 		-- Import the table for plugins
-		local plugins = theme.loadPlugins()
+		local plugins = theme.loadPlugins(style)
 
 		-- Apply the terminal colors
 		if config.disable.term_colors == false then
-			theme.loadTerminal()
+			theme.loadTerminal(style)
 		end
 
 		-- Apply the plugin colors
@@ -119,16 +131,16 @@ function util.load()
 	-- If async loading is enabled,
 	-- execute async_loader() asyncronously, if not, load it now
 	if config.async_loading == true then
-		async = vim.loop.new_async(vim.schedule_wrap(async_loader))
+		async = vim.loop.new_async(vim.schedule_wrap(async_loader(style)))
 	else
-		async_loader()
+		async_loader(style)
 	end
 
 	-- Import tables for the base, syntax, treesitter and lsp
-	local editor = theme.loadEditor()
-	local syntax = theme.loadSyntax()
-	local treesitter = theme.loadTreeSitter()
-	local lsp = theme.loadLSP()
+	local editor = theme.loadEditor(style)
+	local syntax = theme.loadSyntax(style)
+	local treesitter = theme.loadTreeSitter(style)
+	local lsp = theme.loadLSP(style)
 
 	-- Apply base colors
 	for group, colors in pairs(editor) do
