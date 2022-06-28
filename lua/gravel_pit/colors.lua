@@ -34,7 +34,7 @@ colors.DARK = {
 	cyan = "#5e8d87",
 	bright_cyan = "#8abeb7",
 
-	diff_add = "#797d4c",
+	diff_add = "#4e5031",
 	diff_mod = "#364a5a",
 	diff_del = "#642828",
 }
