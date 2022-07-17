@@ -71,9 +71,9 @@ theme.loadEditor = function(style)
 
 	local editor = {
 		Normal = { fg = colors[style].fg, bg = colors[style].bg }, -- normal text and background color
-		NormalNC = { fg = colors[style].fg, bg = colors[style].bg_nc }, -- normal text and background color
+		NormalNC = { fg = colors[style].fg, bg = colors[style].bg }, -- normal text and background color
 		NormalFloat = { fg = colors[style].fg, bg = colors[style].float }, -- normal text and background color for floating windows
-		NormalContrast = { fg = colors[style].fg, bg = colors[style].bg_alt }, -- a help group for contrast fileypes
+		NormalContrast = { fg = colors[style].fg, bg = colors[style].red }, -- a help group for contrast fileypes
 		FloatBorder = { fg = colors[style].bright_yello, bg = colors[style].float }, -- floating window border
 		ColorColumn = { fg = colors[style].none, bg = colors[style].active }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = colors[style].disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -83,7 +83,7 @@ theme.loadEditor = function(style)
 		DiffAdd = { bg = colors[style].diff_add }, -- diff mode: Added line
 		DiffChange = { bg = colors[style].diff_mod }, --  diff mode: Changed line
 		DiffDelete = { bg = colors[style].diff_del }, -- diff mode: Deleted line
-		DiffText = { fg = colors[style].fg, bg = colors[style].bg_alt }, -- diff mode: Changed text within a changed line
+		DiffText = { fg = colors[style].fg }, -- diff mode: Changed text within a changed line
 		ErrorMsg = { fg = colors[style].error }, -- error messages
 		Folded = { fg = colors[style].comments, style = "italic" }, -- line used for closed folds
 		FoldColumn = { fg = colors[style].blue }, -- 'foldcolumn'
@@ -94,7 +94,6 @@ theme.loadEditor = function(style)
 		ModeMsg = { fg = colors[style].accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MoreMsg = { fg = colors[style].accent }, -- |more-prompt|
 		NonText = { fg = colors[style].disabled }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		PmenuSel = { fg = colors[style].red, bg = colors[style].black }, -- Popup menu: selected item.
 		Question = { fg = colors[style].green }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine = { fg = colors[style].highlight, bg = colors[style].title, style = "reverse" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		qfLineNr = { fg = colors[style].highlight, bg = colors[style].title, style = "reverse" }, -- Line numbers for quickfix lists
@@ -141,6 +140,10 @@ theme.loadEditor = function(style)
 
 		VertSplit = { fg = colors[style].bright_black }, -- The column separating vertically split windows
 		WinSeparator = { fg = colors[style].bright_black }, -- Lines between window splits
+
+		-- Command line parameter menue
+		Pmenu = { fg = colors[style].fg, bg = colors[style].float },
+		PmenuSel = { fg = colors[style].bg, bg = colors[style].yellow }, -- Popup menu: selected item.
 	}
 
 	-- Options:
@@ -236,47 +239,25 @@ theme.loadLSP = function(style)
 	-- Lsp highlight groups
 
 	local lsp = {
-		-- LspDiagnosticsDefaultError =            { fg = colors[style].error }, -- used for "Error" diagnostic virtual text
-		-- LspDiagnosticsSignError =               { fg = colors[style].error, bg = colors[style].bg_sign }, -- used for "Error" diagnostic signs in sign column
-		-- LspDiagnosticsFloatingError =           { fg = colors[style].error }, -- used for "Error" diagnostic messages in the diagnostics float
-		-- LspDiagnosticsVirtualTextError =        { fg = colors[style].error }, -- Virtual text "Error"
-		-- LspDiagnosticsUnderlineError =          { style = 'undercurl', sp = colors[style].error }, -- used to underline "Error" diagnostics.
-		-- LspDiagnosticsDefaultWarning =          { fg = colors[style].yellow }, -- used for "Warning" diagnostic signs in sign column
-		-- LspDiagnosticsSignWarning =             { fg = colors[style].yellow, bg = colors[style].bg_sign }, -- used for "Warning" diagnostic signs in sign column
-		-- LspDiagnosticsFloatingWarning =         { fg = colors[style].yellow }, -- used for "Warning" diagnostic messages in the diagnostics float
-		-- LspDiagnosticsVirtualTextWarning =      { fg = colors[style].yellow }, -- Virtual text "Warning"
-		-- LspDiagnosticsUnderlineWarning =        { style = 'undercurl', sp = colors[style].yellow }, -- used to underline "Warning" diagnostics.
-		-- LspDiagnosticsDefaultInformation =      { fg = colors[style].paleblue }, -- used for "Information" diagnostic virtual text
-		-- LspDiagnosticsSignInformation =         { fg = colors[style].paleblue, bg = colors[style].bg_sign },  -- used for "Information" diagnostic signs in sign column
-		-- LspDiagnosticsFloatingInformation =     { fg = colors[style].paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
-		-- LspDiagnosticsVirtualTextInformation =  { fg = colors[style].paleblue }, -- Virtual text "Information"
-		-- LspDiagnosticsUnderlineInformation =    { style = 'undercurl', sp = colors[style].paleblue }, -- used to underline "Information" diagnostics.
-		-- LspDiagnosticsDefaultHint =             { fg = colors[style].purple },  -- used for "Hint" diagnostic virtual text
-		-- LspDiagnosticsSignHint =                { fg = colors[style].purple, bg = colors[style].bg_sign }, -- used for "Hint" diagnostic signs in sign column
-		-- LspDiagnosticsFloatingHint =            { fg = colors[style].purple }, -- used for "Hint" diagnostic messages in the diagnostics float
-		-- LspDiagnosticsVirtualTextHint =         { fg = colors[style].purple }, -- Virtual text "Hint"
-		-- LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = colors[style].paleblue }, -- used to underline "Hint" diagnostics.
-
-		-- Nvim 0.6.
 		DiagnosticError = { fg = colors[style].error },
 		DiagnosticVirtualTextError = { fg = colors[style].error },
 		DiagnosticFloatingError = { fg = colors[style].error },
-		DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg_sign },
+		DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
 		DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
 		DiagnosticWarn = { fg = colors[style].yellow },
 		DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
 		DiagnosticFloatingWarn = { fg = colors[style].yellow },
-		DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg_sign },
+		DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg },
 		DiagnosticUnderlineWarn = { style = "undercurl", sp = colors[style].yellow },
 		DiagnosticInformation = { fg = colors[style].paleblue },
 		DiagnosticVirtualTextInfo = { fg = colors[style].paleblue },
 		DiagnosticFloatingInfo = { fg = colors[style].paleblue },
-		DiagnosticSignInfo = { fg = colors[style].paleblue, bg = colors[style].bg_sign },
+		DiagnosticSignInfo = { fg = colors[style].paleblue, bg = colors[style].bg },
 		DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].paleblue },
 		DiagnosticHint = { fg = colors[style].purple },
 		DiagnosticVirtualTextHint = { fg = colors[style].purple },
 		DiagnosticFloatingHint = { fg = colors[style].purple },
-		DiagnosticSignHint = { fg = colors[style].purple, bg = colors[style].bg_sign },
+		DiagnosticSignHint = { fg = colors[style].purple, bg = colors[style].bg },
 		DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].purple },
 		LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
 		LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
@@ -297,16 +278,16 @@ theme.loadPlugins = function(style)
 		debugBreakpoint = { fg = colors[style].red, bg = colors[style].bg },
 
 		-- Trouble
-		-- TroubleText = { fg = colors[style].text, bg = colors[style].sidebar },
-		-- TroubleCount = { fg = colors[style].purple, bg = colors[style].sidebar },
-		-- TroubleNormal = { fg = colors[style].fg, bg = colors[style].sidebar },
-		-- TroubleSignError = { fg = colors[style].error, bg = colors[style].sidebar },
-		-- TroubleSignWarning = { fg = colors[style].yellow, bg = colors[style].sidebar },
-		-- TroubleSignInformation = { fg = colors[style].paleblue, bg = colors[style].sidebar },
-		-- TroubleSignHint = { fg = colors[style].purple, bg = colors[style].sidebar },
-		-- TroubleFoldIcon = { fg = colors[style].accent, bg = colors[style].sidebar },
-		-- TroubleIndent = { fg = colors[style].border, bg = colors[style].sidebar },
-		-- TroubleLocation = { fg = colors[style].disabled, bg = colors[style].sidebar },
+		TroubleText = { fg = colors[style].text, bg = colors[style].sidebar },
+		TroubleCount = { fg = colors[style].purple, bg = colors[style].sidebar },
+		TroubleNormal = { fg = colors[style].fg, bg = colors[style].sidebar },
+		TroubleSignError = { fg = colors[style].error, bg = colors[style].sidebar },
+		TroubleSignWarning = { fg = colors[style].yellow, bg = colors[style].sidebar },
+		TroubleSignInformation = { fg = colors[style].paleblue, bg = colors[style].sidebar },
+		TroubleSignHint = { fg = colors[style].purple, bg = colors[style].sidebar },
+		TroubleFoldIcon = { fg = colors[style].accent, bg = colors[style].sidebar },
+		TroubleIndent = { fg = colors[style].border, bg = colors[style].sidebar },
+		TroubleLocation = { fg = colors[style].disabled, bg = colors[style].sidebar },
 
 		-- Nvim-Cmp
 		CmpItemAbbrMatch = { fg = colors[style].paleblue, style = "bold" },
@@ -344,6 +325,9 @@ theme.loadPlugins = function(style)
 		NeogitDiffContextHighlight = { fg = colors[style].text, bg = colors[style].contrast },
 		NeogitDiffDeleteHighlight = { fg = colors[style].red },
 		NeogitDiffAddHighlight = { fg = colors[style].green },
+
+		-- Git blame
+		Gitblame = { fg = colors[style].comments, bg = colors[style].black },
 
 		-- GitGutter
 		GitGutterAdd = { fg = colors[style].green }, -- diff mode: Added line |diff.txt|
@@ -388,10 +372,10 @@ theme.loadPlugins = function(style)
 		NvimTreeMarkdownFile = { fg = colors[style].pink },
 		NvimTreeExecFile = { fg = colors[style].green },
 		NvimTreeSpecialFile = { fg = colors[style].purple },
-		-- LspDiagnosticsError =                   { fg = colors[style].error },
-		-- LspDiagnosticsWarning =                 { fg = colors[style].yellow },
-		-- LspDiagnosticsInformation =             { fg = colors[style].paleblue },
-		-- LspDiagnosticsHint =                    { fg = colors[style].purple },
+		LspDiagnosticsError = { fg = colors[style].error },
+		LspDiagnosticsWarning = { fg = colors[style].yellow },
+		LspDiagnosticsInformation = { fg = colors[style].bright_blue },
+		LspDiagnosticsHint = { fg = colors[style].purple },
 
 		-- Sidebar.nvim
 		SidebarNvimNormal = { fg = colors[style].fg },

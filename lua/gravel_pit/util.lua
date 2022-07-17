@@ -83,7 +83,7 @@ function util.load(style)
 	if style == util.Style.DARK then
 		vim.opt.background = "dark"
 		vim.g.colors_name = "gravel-pit-dark"
-		vim.notify("loading gravel_pit_dark")
+		-- vim.notify("loading gravel_pit_dark")
 	elseif style == util.Style.LIGHT then
 		vim.opt.background = "light"
 		vim.g.colors_name = "gravel-pit-light"

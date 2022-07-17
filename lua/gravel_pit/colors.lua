@@ -1,10 +1,10 @@
 local colors = {}
 
 colors.DARK = {
-	fg = "#c5c8c6",
-	bg = "#1d1f21",
+	fg = "#c7c7c7",
+	bg = "#212121",
 
-	comments = "#555b65",
+	comments = "#666666",
 
 	line_numbers = "#424242",
 	selection = "#404040",
@@ -16,11 +16,15 @@ colors.DARK = {
 	warn = "#de935f",
 	error = "#cc6666",
 
+	-- float colors
+	float = "#262626",
+	sidebar = "#262626",
+
 	-- terminal colors
 	black = "#282a2e",
-	bright_black = "#555b65",
-	white = "#707880",
-	bright_white = "#c5c8c6",
+	bright_black = "#262626",
+	white = "#c7c7c7",
+	bright_white = "#ffffff",
 	red = "#a54242",
 	bright_red = "#cc6666",
 	green = "#8c9440",
@@ -40,10 +44,10 @@ colors.DARK = {
 }
 
 colors.LIGHT = {
-	fg = "#1d1f21",
-	bg = "#c5c8c6",
+	fg = "#212121",
+	bg = "#c7c7c7",
 
-	comments = "#555b65",
+	comments = "#666666",
 
 	line_numbers = "#424242",
 	selection = "#404040",
@@ -57,9 +61,9 @@ colors.LIGHT = {
 
 	-- terminal colors
 	black = "#282a2e",
-	bright_black = "#555b65",
-	white = "#707880",
-	bright_white = "#c5c8c6",
+	bright_black = "#262626",
+	white = "#c7c7c7",
+	bright_white = "#ffffff",
 	red = "#a54242",
 	bright_red = "#cc6666",
 	green = "#686e2f",
