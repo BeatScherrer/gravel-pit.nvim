@@ -21,7 +21,7 @@ theme.loadSyntax = function(style)
 		Function = { fg = colors[style].blue, style = styles.functions }, -- italic funtion names
 		Identifier = { fg = colors[style].fg, style = styles.variables }, -- any variable name
 		Statement = { fg = colors[style].bright_yellow }, -- any statement
-		Keyword = { fg = colors[style].purple, style = styles.keywords }, -- italic for, do, while, etc.
+		Keyword = { fg = colors[style].bright_red, style = styles.keywords }, -- italic for, do, while, etc.
 		Label = { fg = colors[style].red }, -- case, default, etc.
 		Operator = { fg = colors[style].cyan }, -- sizeof", "+", "*", etc.
 		Exception = { fg = colors[style].red }, -- try, catch, throw
@@ -31,7 +31,7 @@ theme.loadSyntax = function(style)
 		Macro = { fg = colors[style].red }, -- same as Define
 		Typedef = { fg = colors[style].red }, -- A typedef
 		PreCondit = { fg = colors[style].red }, -- preprocessor #if, #else, #endif, etc.
-		Repeat = { fg = colors[style].purple, style = styles.keywords }, -- italic any other keyword
+		Repeat = { fg = colors[style].bright_red, style = styles.keywords }, -- italic any other keyword
 		String = { fg = colors[style].bright_cyan, style = styles.strings }, -- any string
 		Special = { fg = colors[style].red }, -- any special symbol
 		SpecialChar = { fg = colors[style].disabled }, -- special character in a constant
@@ -48,7 +48,7 @@ theme.loadSyntax = function(style)
 		htmlH2 = { fg = colors[style].red, style = "bold" },
 		htmlH3 = { fg = colors[style].green, style = "bold" },
 		htmlH4 = { fg = colors[style].yellow, style = "bold" },
-		htmlH5 = { fg = colors[style].purple, style = "bold" },
+		htmlH5 = { fg = colors[style].magenta, style = "bold" },
 		markdownH1 = { fg = colors[style].bright_yellow, style = "bold" },
 		markdownH2 = { fg = colors[style].bright_yellow, style = "bold" },
 		markdownH3 = { fg = colors[style].bright_yellow, style = "bold" },
@@ -99,11 +99,11 @@ theme.loadEditor = function(style)
 		qfLineNr = { fg = colors[style].highlight, bg = colors[style].title, style = "reverse" }, -- Line numbers for quickfix lists
 		Search = { fg = colors[style].bg, bg = colors[style].cyan, style = "bold" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn = { fg = colors[style].fg, bg = colors[style].bg_sign },
-		SpecialKey = { fg = colors[style].purple }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpecialKey = { fg = colors[style].magenta }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad = { fg = colors[style].red, style = "italic,undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { fg = colors[style].blue, style = "italic,undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { fg = colors[style].cyan, style = "italic,undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { fg = colors[style].purple, style = "italic,undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellRare = { fg = colors[style].magenta, style = "italic,undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { fg = colors[style].fg, bg = colors[style].bg }, -- status line of current window
 		StatusLineNC = { fg = colors[style].disabled, bg = colors[style].bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		StatusLineTerm = { fg = colors[style].fg, bg = colors[style].active }, -- status line of current terminal window
@@ -124,7 +124,7 @@ theme.loadEditor = function(style)
 		NormalMode = { fg = colors[style].comments }, -- Normal mode message in the cmdline
 		InsertMode = { fg = colors[style].green }, -- Insert mode message in the cmdline
 		ReplacelMode = { fg = colors[style].red }, -- Replace mode message in the cmdline
-		VisualMode = { fg = colors[style].purple }, -- Visual mode message in the cmdline
+		VisualMode = { fg = colors[style].magenta }, -- Visual mode message in the cmdline
 		CommandMode = { fg = colors[style].gray }, -- Command mode message in the cmdline
 		Warnings = { fg = colors[style].yellow },
 
@@ -178,7 +178,7 @@ theme.loadTreeSitter = function(style)
 		TSBoolean = { fg = colors[style].orange }, -- For booleans.
 		TSCharacter = { fg = colors[style].orange }, -- For characters.
 		TSComment = { fg = colors[style].comments, style = styles.comments }, -- For comment blocks.
-		TSConditional = { fg = colors[style].purple, style = styles.keywords }, -- For keywords related to conditionnals.
+		TSConditional = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords related to conditionnals.
 		TSConstructor = { fg = colors[style].blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = colors[style].bright_yellow }, -- For constants
 		TSConstBuiltin = { fg = colors[style].bright_red }, -- For constant that are built in the language: `nil` in Lua.
@@ -192,7 +192,7 @@ theme.loadTreeSitter = function(style)
 		TSFuncMacro = { fg = colors[style].bright_red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		TSInclude = { fg = colors[style].bright_red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSKeyword = { fg = colors[style].bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
-		TSKeywordFunction = { fg = colors[style].purple, style = styles.keywords }, -- For keywords used to define a fuction.
+		TSKeywordFunction = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords used to define a fuction.
 		TSKeywordOperator = { fg = colors[style].brigth_red }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		TSKeywordReturn = { fg = colors[style].bright_red }, -- return keyword
 		TSLabel = { fg = colors[style].bright_red }, -- For labels: `label:` in C and `:label:` in Lua.
@@ -206,12 +206,12 @@ theme.loadTreeSitter = function(style)
 		TSPunctDelimiter = { fg = colors[style].bright_yellow }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = colors[style].fg }, -- For brackets and parens.
 		TSPunctSpecial = { fg = colors[style].fg }, -- For special punctutation that does not fall in the catagories before.
-		TSRepeat = { fg = colors[style].purple, style = styles.keywords }, -- For keywords related to loops.
+		TSRepeat = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords related to loops.
 		TSString = { fg = colors[style].cyan, styles = styles.strings }, -- For strings.
 		TSStringRegex = { fg = colors[style].yellow }, -- For regexes.
 		TSStringEscape = { fg = colors[style].text }, -- For escape characters within a string.
 		TSSymbol = { fg = colors[style].yellow }, -- For identifiers referring to symbols or atoms.
-		TSStrong = { fg = colors[style].paleblue, style = "bold" }, -- Text to be represented in bold.
+		TSStrong = { fg = colors[style].bright_blue, style = "bold" }, -- Text to be represented in bold.
 		TSType = { fg = colors[style].green }, -- For types.
 		TSTypeBuiltin = { fg = colors[style].green }, -- For builtin types.
 		TSTag = { fg = colors[style].bright_red }, -- Tags like html tag names.
@@ -221,7 +221,7 @@ theme.loadTreeSitter = function(style)
 		TSTextReference = { fg = colors[style].yellow }, -- FIXME
 		TSVariable = { fg = colors[style].fg, style = styles.variables }, -- Any variable name that does not have another highlight.
 		TSVariableBuiltin = { fg = colors[style].fg, style = styles.variables }, -- Variable names that are defined by the languages, like `this` or `self`.
-		TSEmphasis = { fg = colors[style].paleblue }, -- For text to be represented with emphasis.
+		TSEmphasis = { fg = colors[style].bright_blue }, -- For text to be represented with emphasis.
 		TSUnderline = { fg = colors[style].fg, style = "underline" }, -- For text to be represented with an underline.
 		-- TSStrike =                  { fg = colors[style].fg,, style = 'strikethrough'}, -- For strikethrough text.
 		TSTitle = { fg = colors[style].title, style = "bold" }, -- Text that is part of a title.
@@ -240,25 +240,25 @@ theme.loadLSP = function(style)
 
 	local lsp = {
 		DiagnosticError = { fg = colors[style].error },
-		DiagnosticVirtualTextError = { fg = colors[style].error },
-		DiagnosticFloatingError = { fg = colors[style].error },
-		DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
-		DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
 		DiagnosticWarn = { fg = colors[style].yellow },
-		DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
-		DiagnosticFloatingWarn = { fg = colors[style].yellow },
+		DiagnosticInformation = { fg = colors[style].bright_blue },
+		DiagnosticHint = { fg = colors[style].magenta },
+		DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
 		DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg },
+		DiagnosticSignInfo = { fg = colors[style].bright_blue, bg = colors[style].bg },
+		DiagnosticSignHint = { fg = colors[style].magenta, bg = colors[style].bg },
+		DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
 		DiagnosticUnderlineWarn = { style = "undercurl", sp = colors[style].yellow },
-		DiagnosticInformation = { fg = colors[style].paleblue },
-		DiagnosticVirtualTextInfo = { fg = colors[style].paleblue },
-		DiagnosticFloatingInfo = { fg = colors[style].paleblue },
-		DiagnosticSignInfo = { fg = colors[style].paleblue, bg = colors[style].bg },
-		DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].paleblue },
-		DiagnosticHint = { fg = colors[style].purple },
-		DiagnosticVirtualTextHint = { fg = colors[style].purple },
-		DiagnosticFloatingHint = { fg = colors[style].purple },
-		DiagnosticSignHint = { fg = colors[style].purple, bg = colors[style].bg },
-		DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].purple },
+		DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].bright_blue },
+		DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].magenta },
+		DiagnosticFloatingError = { fg = colors[style].error },
+		DiagnosticFloatingWarn = { fg = colors[style].yellow },
+		DiagnosticFloatingInfo = { fg = colors[style].bright_blue },
+		DiagnosticFloatingHint = { fg = colors[style].magenta },
+		DiagnosticVirtualTextError = { fg = colors[style].error },
+		DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
+		DiagnosticVirtualTextInfo = { fg = colors[style].bright_blue },
+		DiagnosticVirtualTextHint = { fg = colors[style].magenta },
 		LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
 		LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "write" references
@@ -279,29 +279,29 @@ theme.loadPlugins = function(style)
 
 		-- Trouble
 		TroubleText = { fg = colors[style].text, bg = colors[style].sidebar },
-		TroubleCount = { fg = colors[style].purple, bg = colors[style].sidebar },
+		TroubleCount = { fg = colors[style].magenta, bg = colors[style].sidebar },
 		TroubleNormal = { fg = colors[style].fg, bg = colors[style].sidebar },
 		TroubleSignError = { fg = colors[style].error, bg = colors[style].sidebar },
 		TroubleSignWarning = { fg = colors[style].yellow, bg = colors[style].sidebar },
-		TroubleSignInformation = { fg = colors[style].paleblue, bg = colors[style].sidebar },
-		TroubleSignHint = { fg = colors[style].purple, bg = colors[style].sidebar },
+		TroubleSignInformation = { fg = colors[style].bright_blue, bg = colors[style].sidebar },
+		TroubleSignHint = { fg = colors[style].magenta, bg = colors[style].sidebar },
 		TroubleFoldIcon = { fg = colors[style].accent, bg = colors[style].sidebar },
 		TroubleIndent = { fg = colors[style].border, bg = colors[style].sidebar },
 		TroubleLocation = { fg = colors[style].disabled, bg = colors[style].sidebar },
 
 		-- Nvim-Cmp
-		CmpItemAbbrMatch = { fg = colors[style].paleblue, style = "bold" },
+		CmpItemAbbrMatch = { fg = colors[style].bright_blue, style = "bold" },
 		CmpItemKindText = { fg = colors[style].red },
 		CmpItemKindMethod = { fg = colors[style].blue },
 		CmpItemKindFunction = { fg = colors[style].blue },
-		CmpItemKindContructor = { fg = colors[style].purple },
+		CmpItemKindContructor = { fg = colors[style].magenta },
 		CmpItemKindField = { fg = colors[style].cyan },
-		CmpItemKindVariable = { fg = colors[style].paleblue },
-		CmpItemKindConstant = { fg = colors[style].paleblue },
+		CmpItemKindVariable = { fg = colors[style].bright_blue },
+		CmpItemKindConstant = { fg = colors[style].bright_blue },
 		CmpItemKindClass = { fg = colors[style].yellow },
 		CmpItemKindInterface = { fg = colors[style].yellow },
 		CmpItemKindModule = { fg = colors[style].red },
-		CmpItemKindProperty = { fg = colors[style].purple },
+		CmpItemKindProperty = { fg = colors[style].magenta },
 		CmpItemKindKeyword = { fg = colors[style].cyan },
 		CmpItemKindFile = { fg = colors[style].title },
 		CmpItemKindFolder = { fg = colors[style].title },
@@ -315,11 +315,11 @@ theme.loadPlugins = function(style)
 		diffNewFile = { fg = colors[style].title },
 		diffFile = { fg = colors[style].gray },
 		diffLine = { fg = colors[style].cyan },
-		diffIndexLine = { fg = colors[style].purple },
+		diffIndexLine = { fg = colors[style].magenta },
 
 		-- Neogit
 		NeogitBranch = { fg = colors[style].cyan },
-		NeogitRemote = { fg = colors[style].purple },
+		NeogitRemote = { fg = colors[style].magenta },
 		NeogitHunkHeader = { fg = colors[style].fg, bg = colors[style].highlight },
 		NeogitHunkHeaderHighlight = { fg = colors[style].blue, bg = colors[style].contrast },
 		NeogitDiffContextHighlight = { fg = colors[style].text, bg = colors[style].contrast },
@@ -350,7 +350,7 @@ theme.loadPlugins = function(style)
 		TelescopePromptBorder = { fg = colors[style].border, bg = colors[style].float },
 		TelescopeResultsBorder = { fg = colors[style].border, bg = colors[style].float },
 		TelescopePreviewBorder = { fg = colors[style].border, bg = colors[style].float },
-		TelescopeSelectionCaret = { fg = colors[style].purple },
+		TelescopeSelectionCaret = { fg = colors[style].magenta },
 		TelescopeSelection = { fg = colors[style].bg, bg = colors[style].cyan },
 		TelescopeMatching = { fg = colors[style].yellow },
 
@@ -371,11 +371,11 @@ theme.loadPlugins = function(style)
 		NvimTreeImageFile = { fg = colors[style].yellow },
 		NvimTreeMarkdownFile = { fg = colors[style].pink },
 		NvimTreeExecFile = { fg = colors[style].green },
-		NvimTreeSpecialFile = { fg = colors[style].purple },
+		NvimTreeSpecialFile = { fg = colors[style].magenta },
 		LspDiagnosticsError = { fg = colors[style].error },
 		LspDiagnosticsWarning = { fg = colors[style].yellow },
 		LspDiagnosticsInformation = { fg = colors[style].bright_blue },
-		LspDiagnosticsHint = { fg = colors[style].purple },
+		LspDiagnosticsHint = { fg = colors[style].magenta },
 
 		-- Sidebar.nvim
 		SidebarNvimNormal = { fg = colors[style].fg },
@@ -406,16 +406,16 @@ theme.loadPlugins = function(style)
 		LspSagaRenameBorder = { fg = colors[style].border, bg = colors[style].float },
 		LspSagaRenamePromptPrefix = { fg = colors[style].green },
 		LspSagaDefPreviewBorder = { fg = colors[style].border, bg = colors[style].float },
-		LspSagaCodeActionTitle = { fg = colors[style].paleblue },
-		LspSagaCodeActionContent = { fg = colors[style].purple },
+		LspSagaCodeActionTitle = { fg = colors[style].bright_blue },
+		LspSagaCodeActionContent = { fg = colors[style].magenta },
 		LspSagaCodeActionBorder = { fg = colors[style].border, bg = colors[style].float },
 		LspSagaCodeActionTruncateLine = { fg = colors[style].border },
 		LspSagaSignatureHelpBorder = { fg = colors[style].border, bg = colors[style].float },
 		LspSagaFinderSelection = { fg = colors[style].green },
 		LspSagaLspFinderBorder = { fg = colors[style].border, bg = colors[style].float },
 		LspSagaAutoPreview = { fg = colors[style].border, bg = colors[style].float },
-		ReferencesCount = { fg = colors[style].purple },
-		DefinitionCount = { fg = colors[style].purple },
+		ReferencesCount = { fg = colors[style].magenta },
+		DefinitionCount = { fg = colors[style].magenta },
 		DefinitionPreviewTitle = { fg = colors[style].green },
 		DefinitionIcon = { fg = colors[style].blue },
 		ReferencesIcon = { fg = colors[style].blue },
@@ -452,7 +452,7 @@ theme.loadPlugins = function(style)
 
 		-- Hop
 		HopNextKey = { fg = colors[style].accent, style = "bold" },
-		HopNextKey1 = { fg = colors[style].purple, style = "bold" },
+		HopNextKey1 = { fg = colors[style].magenta, style = "bold" },
 		HopNextKey2 = { fg = colors[style].blue },
 		HopUnmatched = { fg = colors[style].comments },
 
