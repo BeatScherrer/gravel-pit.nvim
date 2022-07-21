@@ -269,8 +269,6 @@ end
 
 theme.loadPlugins = function(style)
 	-- Plugins highlight groups
-	print(style)
-
 	local plugins = {
 
 		-- Built in debugger
