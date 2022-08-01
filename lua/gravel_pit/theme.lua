@@ -239,29 +239,29 @@ theme.loadLSP = function(style)
 	-- Lsp highlight groups
 
 	local lsp = {
-		DiagnosticError = { fg = colors[style].error },
-		DiagnosticWarn = { fg = colors[style].yellow },
-		DiagnosticInformation = { fg = colors[style].bright_blue },
-		DiagnosticHint = { fg = colors[style].magenta },
-		DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
-		DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg },
-		DiagnosticSignInfo = { fg = colors[style].bright_blue, bg = colors[style].bg },
-		DiagnosticSignHint = { fg = colors[style].magenta, bg = colors[style].bg },
-		DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
-		DiagnosticUnderlineWarn = { style = "undercurl", sp = colors[style].yellow },
-		DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].bright_blue },
-		DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].magenta },
-		DiagnosticFloatingError = { fg = colors[style].error },
-		DiagnosticFloatingWarn = { fg = colors[style].yellow },
-		DiagnosticFloatingInfo = { fg = colors[style].bright_blue },
-		DiagnosticFloatingHint = { fg = colors[style].magenta },
-		DiagnosticVirtualTextError = { fg = colors[style].error },
-		DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
-		DiagnosticVirtualTextInfo = { fg = colors[style].bright_blue },
-		DiagnosticVirtualTextHint = { fg = colors[style].magenta },
-		LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
-		LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
-		LspReferenceWrite = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "write" references
+		-- DiagnosticError = { fg = colors[style].error },
+		-- DiagnosticWarn = { fg = colors[style].yellow },
+		-- DiagnosticInformation = { fg = colors[style].bright_blue },
+		-- DiagnosticHint = { fg = colors[style].magenta },
+		-- DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
+		-- DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg },
+		-- DiagnosticSignInfo = { fg = colors[style].bright_blue, bg = colors[style].bg },
+		-- DiagnosticSignHint = { fg = colors[style].magenta, bg = colors[style].bg },
+		-- DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
+		-- DiagnosticUnderlineWarn = { style = "undercurl", sp = colors[style].yellow },
+		-- DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].bright_blue },
+		-- DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].magenta },
+		-- DiagnosticFloatingError = { fg = colors[style].error },
+		-- DiagnosticFloatingWarn = { fg = colors[style].yellow },
+		-- DiagnosticFloatingInfo = { fg = colors[style].bright_blue },
+		-- DiagnosticFloatingHint = { fg = colors[style].magenta },
+		-- DiagnosticVirtualTextError = { fg = colors[style].error },
+		-- DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
+		-- DiagnosticVirtualTextInfo = { fg = colors[style].bright_blue },
+		-- DiagnosticVirtualTextHint = { fg = colors[style].magenta },
+		-- LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
+		-- LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
+		-- LspReferenceWrite = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "write" references
 	}
 
 	return lsp
