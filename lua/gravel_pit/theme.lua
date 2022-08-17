@@ -184,7 +184,7 @@ theme.loadTreeSitter = function(style)
 		TSConstBuiltin = { fg = colors[style].bright_red }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = colors[style].bright_red }, -- For constants that are defined by macros: `NULL` in C.
 		TSError = { fg = colors[style].error }, -- For syntax/parser errors.
-		TSException = { fg = colors[style].red }, -- For exception related keywords.
+		TSException = { fg = colors[style].bright_red }, -- For exception related keywords.
 		TSField = { fg = colors[style].bright_green }, -- For fields.
 		TSFloat = { fg = colors[style].orange }, -- For floats.
 		TSFunction = { fg = colors[style].blue, style = styles.functions }, -- For fuction (calls and definitions).
@@ -239,29 +239,29 @@ theme.loadLSP = function(style)
 	-- Lsp highlight groups
 
 	local lsp = {
-		-- DiagnosticError = { fg = colors[style].error },
-		-- DiagnosticWarn = { fg = colors[style].yellow },
-		-- DiagnosticInformation = { fg = colors[style].bright_blue },
-		-- DiagnosticHint = { fg = colors[style].magenta },
-		-- DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
-		-- DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg },
-		-- DiagnosticSignInfo = { fg = colors[style].bright_blue, bg = colors[style].bg },
-		-- DiagnosticSignHint = { fg = colors[style].magenta, bg = colors[style].bg },
-		-- DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
-		-- DiagnosticUnderlineWarn = { style = "undercurl", sp = colors[style].yellow },
-		-- DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].bright_blue },
-		-- DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].magenta },
-		-- DiagnosticFloatingError = { fg = colors[style].error },
-		-- DiagnosticFloatingWarn = { fg = colors[style].yellow },
-		-- DiagnosticFloatingInfo = { fg = colors[style].bright_blue },
-		-- DiagnosticFloatingHint = { fg = colors[style].magenta },
-		-- DiagnosticVirtualTextError = { fg = colors[style].error },
-		-- DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
-		-- DiagnosticVirtualTextInfo = { fg = colors[style].bright_blue },
-		-- DiagnosticVirtualTextHint = { fg = colors[style].magenta },
-		-- LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
-		-- LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
-		-- LspReferenceWrite = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "write" references
+		DiagnosticError = { fg = colors[style].error },
+		DiagnosticWarn = { fg = colors[style].yellow },
+		DiagnosticInformation = { fg = colors[style].bright_blue },
+		DiagnosticHint = { fg = colors[style].magenta },
+		DiagnosticSignError = { fg = colors[style].error, bg = colors[style].bg },
+		DiagnosticSignWarn = { fg = colors[style].yellow, bg = colors[style].bg },
+		DiagnosticSignInfo = { fg = colors[style].bright_blue, bg = colors[style].bg },
+		DiagnosticSignHint = { fg = colors[style].magenta, bg = colors[style].bg },
+		DiagnosticUnderlineError = { style = "undercurl", sp = colors[style].error },
+		DiagnosticUnderlineWarn = { style = "undercurl", sp = colors[style].yellow },
+		DiagnosticUnderlineInfo = { style = "undercurl", sp = colors[style].bright_blue },
+		DiagnosticUnderlineHint = { style = "undercurl", sp = colors[style].magenta },
+		DiagnosticFloatingError = { fg = colors[style].error },
+		DiagnosticFloatingWarn = { fg = colors[style].yellow },
+		DiagnosticFloatingInfo = { fg = colors[style].bright_blue },
+		DiagnosticFloatingHint = { fg = colors[style].magenta },
+		DiagnosticVirtualTextError = { fg = colors[style].error },
+		DiagnosticVirtualTextWarn = { fg = colors[style].yellow },
+		DiagnosticVirtualTextInfo = { fg = colors[style].bright_blue },
+		DiagnosticVirtualTextHint = { fg = colors[style].magenta },
+		LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
+		LspReferenceWrite = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "write" references
 	}
 
 	return lsp
@@ -273,7 +273,7 @@ theme.loadPlugins = function(style)
 
 		-- Built in debugger
 		-- debugPC =								{ bg = material.selection },
-		debugBreakpoint = { fg = colors[style].red, bg = colors[style].bg },
+		debugBreakpoint = { fg = colors[style].bright_red, bg = colors[style].bg },
 
 		-- Trouble
 		TroubleText = { fg = colors[style].text, bg = colors[style].sidebar },
@@ -436,7 +436,7 @@ theme.loadPlugins = function(style)
 		IndentBlanklineContextChar = { fg = colors[style].bright_yellow },
 
 		-- Nvim dap
-		DapBreakpoint = { fg = colors[style].red },
+		DapBreakpoint = { fg = colors[style].bright_red },
 		DapStopped = { fg = colors[style].yellow },
 
 		-- Nvim dap-UI
