@@ -7,7 +7,7 @@ theme.loadSyntax = function(style)
 	-- Syntax highlight groups
 
 	local syntax = {
-		Type = { fg = colors[style].red }, -- int, long, char, etc.
+		Type = { fg = colors[style].bright_red }, -- int, long, char, etc.
 		StorageClass = { fg = colors[style].cyan }, -- static, register, volatile, etc.
 		Structure = { fg = colors[style].bright_yellow }, -- struct, union, enum, etc.
 		Comment = { fg = colors[style].comments, style = styles.comments }, -- italic comments
@@ -22,22 +22,22 @@ theme.loadSyntax = function(style)
 		Identifier = { fg = colors[style].fg, style = styles.variables }, -- any variable name
 		Statement = { fg = colors[style].bright_yellow }, -- any statement
 		Keyword = { fg = colors[style].bright_red, style = styles.keywords }, -- italic for, do, while, etc.
-		Label = { fg = colors[style].red }, -- case, default, etc.
+		Label = { fg = colors[style].bright_red }, -- case, default, etc.
 		Operator = { fg = colors[style].cyan }, -- sizeof", "+", "*", etc.
-		Exception = { fg = colors[style].red }, -- try, catch, throw
-		PreProc = { fg = colors[style].red }, -- generic Preprocessor
-		Include = { fg = colors[style].red }, -- preprocessor #include
-		Define = { fg = colors[style].red }, -- preprocessor #define
-		Macro = { fg = colors[style].red }, -- same as Define
-		Typedef = { fg = colors[style].red }, -- A typedef
-		PreCondit = { fg = colors[style].red }, -- preprocessor #if, #else, #endif, etc.
+		Exception = { fg = colors[style].bright_red }, -- try, catch, throw
+		PreProc = { fg = colors[style].bright_red }, -- generic Preprocessor
+		Include = { fg = colors[style].bright_red }, -- preprocessor #include
+		Define = { fg = colors[style].bright_red }, -- preprocessor #define
+		Macro = { fg = colors[style].bright_red }, -- same as Define
+		Typedef = { fg = colors[style].bright_red }, -- A typedef
+		PreCondit = { fg = colors[style].bright_red }, -- preprocessor #if, #else, #endif, etc.
 		Repeat = { fg = colors[style].bright_red, style = styles.keywords }, -- italic any other keyword
 		String = { fg = colors[style].bright_cyan, style = styles.strings }, -- any string
-		Special = { fg = colors[style].red }, -- any special symbol
+		Special = { fg = colors[style].bright_red }, -- any special symbol
 		SpecialChar = { fg = colors[style].disabled }, -- special character in a constant
-		Tag = { fg = colors[style].red }, -- you can use CTRL-] on this
+		Tag = { fg = colors[style].bright_red }, -- you can use CTRL-] on this
 		Delimiter = { fg = colors[style].cyan }, -- character that needs attention like , or .
-		Debug = { fg = colors[style].red }, -- debugging statements
+		Debug = { fg = colors[style].bright_red }, -- debugging statements
 		Underlined = { fg = colors[style].link, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = colors[style].disabled }, -- left blank, hidden
 		Error = { fg = colors[style].error, style = "bold,underline" }, -- any erroneous construct
@@ -45,7 +45,7 @@ theme.loadSyntax = function(style)
 
 		htmlLink = { fg = colors[style].link, style = "underline" },
 		htmlH1 = { fg = colors[style].cyan, style = "bold" },
-		htmlH2 = { fg = colors[style].red, style = "bold" },
+		htmlH2 = { fg = colors[style].bright_red, style = "bold" },
 		htmlH3 = { fg = colors[style].green, style = "bold" },
 		htmlH4 = { fg = colors[style].yellow, style = "bold" },
 		htmlH5 = { fg = colors[style].magenta, style = "bold" },
@@ -74,8 +74,8 @@ theme.loadEditor = function(style)
 		NormalNC = { fg = colors[style].fg, bg = colors[style].bg }, -- normal text and background color
 		NormalFloat = { fg = colors[style].fg, bg = colors[style].float }, -- normal text and background color for floating windows
 		NormalContrast = { fg = colors[style].fg, bg = colors[style].red }, -- a help group for contrast fileypes
-		FloatBorder = { fg = colors[style].bright_yello, bg = colors[style].float }, -- floating window border
-		ColorColumn = { fg = colors[style].none, bg = colors[style].active }, --  used for the columns set with 'colorcolumn'
+		FloatBorder = { fg = colors[style].yellow, bg = colors[style].float }, -- floating window border
+		ColorColumn = { fg = colors[style].green, bg = colors[style].float }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = colors[style].disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = colors[style].bg_alt, bg = colors[style].cursor }, -- the character under the cursor
 		CursorIM = { fg = colors[style].bg_alt, bg = colors[style].cursor }, -- like Cursor, but used when in IME mode
@@ -108,9 +108,9 @@ theme.loadEditor = function(style)
 		StatusLineNC = { fg = colors[style].disabled, bg = colors[style].bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		StatusLineTerm = { fg = colors[style].fg, bg = colors[style].active }, -- status line of current terminal window
 		StatusLineTermNC = { fg = colors[style].disabled, bg = colors[style].bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLineFill = { fg = colors[style].fg }, -- tab pages line, where there are no labels
-		TablineSel = { fg = colors[style].cyan, bg = colors[style].accent }, -- tab pages line, active tab page label
-		Tabline = { fg = colors[style].fg },
+		TabLineFill = { fg = colors[style].fg, bg = colors[style].float }, -- tab pages line, where there are no labels
+		TablineSel = { fg = colors[style].cyan, bg = colors[style].float }, -- tab pages line, active tab page label
+		Tabline = { fg = colors[style].cyan, bg = colors[style].float },
 		Title = { fg = colors[style].title, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { fg = colors[style].none, bg = colors[style].selection }, -- Visual mode selection
 		VisualNOS = { fg = colors[style].none, bg = colors[style].selection }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -273,7 +273,7 @@ theme.loadPlugins = function(style)
 
 		-- Built in debugger
 		-- debugPC =								{ bg = material.selection },
-		debugBreakpoint = { fg = colors[style].bright_red, bg = colors[style].bg },
+		debugBreakpoint = { fg = colors[style].error, bg = colors[style].bg },
 
 		-- Trouble
 		TroubleText = { fg = colors[style].text, bg = colors[style].sidebar },
@@ -307,7 +307,7 @@ theme.loadPlugins = function(style)
 
 		-- Diff
 		diffAdded = { fg = colors[style].green },
-		diffRemoved = { fg = colors[style].red },
+		diffRemoved = { fg = colors[style].bright_reed },
 		diffChanged = { fg = colors[style].blue },
 		diffOldFile = { fg = colors[style].text },
 		diffNewFile = { fg = colors[style].title },
@@ -321,7 +321,7 @@ theme.loadPlugins = function(style)
 		NeogitHunkHeader = { fg = colors[style].fg, bg = colors[style].highlight },
 		NeogitHunkHeaderHighlight = { fg = colors[style].blue, bg = colors[style].contrast },
 		NeogitDiffContextHighlight = { fg = colors[style].text, bg = colors[style].contrast },
-		NeogitDiffDeleteHighlight = { fg = colors[style].red },
+		NeogitDiffDeleteHighlight = { fg = colors[style].bright_red },
 		NeogitDiffAddHighlight = { fg = colors[style].green },
 
 		-- Git blame
@@ -330,7 +330,7 @@ theme.loadPlugins = function(style)
 		-- GitGutter
 		GitGutterAdd = { fg = colors[style].green }, -- diff mode: Added line |diff.txt|
 		GitGutterChange = { fg = colors[style].blue }, -- diff mode: Changed line |diff.txt|
-		GitGutterDelete = { fg = colors[style].red }, -- diff mode: Deleted line |diff.txt|
+		GitGutterDelete = { fg = colors[style].bright_red }, -- diff mode: Deleted line |diff.txt|
 
 		-- GitSigns
 		GitSignsAdd = { fg = colors[style].green, bg = colors[style].bg_sign }, -- diff mode: Added line |diff.txt|
@@ -339,9 +339,10 @@ theme.loadPlugins = function(style)
 		GitSignsChange = { fg = colors[style].blue, bg = colors[style].bg_sign }, -- diff mode: Changed line |diff.txt|
 		GitSignsChangeNr = { fg = colors[style].blue, bg = colors[style].bg_num }, -- diff mode: Changed line |diff.txt|
 		GitSignsChangeLn = { fg = colors[style].blue }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = colors[style].red, bg = colors[style].bg_sign }, -- diff mode: Deleted line |diff.txt|
-		GitSignsDeleteNr = { fg = colors[style].red, bg = colors[style].bg_num }, -- diff mode: Deleted line |diff.txt|
-		GitSignsDeleteLn = { fg = colors[style].red }, -- diff mode: Deleted line |diff.txt|
+		GitSignsDelete = { fg = colors[style].bright_red, bg = colors[style].bg_sign }, -- diff mode: Deleted line |diff.txt|
+		GitSignsDeleteNr = { fg = colors[style].bright_red, bg = colors[style].bg_num }, -- diff mode: Deleted line |diff.txt|
+		GitSignsDeleteLn = { fg = colors[style].bright_red }, -- diff mode: Deleted line |diff.txt|
+		GitSignsCurrentLineBlame = { fg = colors[style].comments },
 
 		-- Telescope
 		TelescopeNormal = { fg = colors[style].fg, bg = colors[style].float },
@@ -424,7 +425,7 @@ theme.loadPlugins = function(style)
 		SymbolsOutlineConnector = { fg = colors[style].border },
 
 		-- BufferLine
-		BufferLineIndicatorSelected = { fg = colors[style].accent },
+		BufferLineIndicatorSelected = { fg = colors[style].bright_cyan },
 		BufferLineFill = { bg = colors[style].bg },
 
 		-- Sneak
@@ -436,7 +437,7 @@ theme.loadPlugins = function(style)
 		IndentBlanklineContextChar = { fg = colors[style].bright_yellow },
 
 		-- Nvim dap
-		DapBreakpoint = { fg = colors[style].bright_red },
+		DapBreakpoint = { fg = colors[style].error },
 		DapStopped = { fg = colors[style].yellow },
 
 		-- Nvim dap-UI
