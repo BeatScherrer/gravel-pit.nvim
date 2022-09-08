@@ -211,7 +211,7 @@ theme.loadTreeSitter = function(style)
 		TSStringRegex = { fg = colors[style].yellow }, -- For regexes.
 		TSStringEscape = { fg = colors[style].text }, -- For escape characters within a string.
 		TSSymbol = { fg = colors[style].yellow }, -- For identifiers referring to symbols or atoms.
-		TSStrong = { fg = colors[style].bright_blue, style = "bold" }, -- Text to be represented in bold.
+		TSStrong = { fg = colors[style].magenta, style = "bold" }, -- Text to be represented in bold.
 		TSType = { fg = colors[style].green }, -- For types.
 		TSTypeBuiltin = { fg = colors[style].green }, -- For builtin types.
 		TSTag = { fg = colors[style].bright_red }, -- Tags like html tag names.
@@ -229,7 +229,9 @@ theme.loadTreeSitter = function(style)
 		TSURI = { fg = colors[style].link }, -- Any URI like a link or email.
 		TSMath = { fg = colors[style].blue }, -- Math environments like LaTeX's `$ ... $`
 		TSDanger = { fg = colors[style].error }, -- Text representation of a danger note.
-		--TSNone =                    { }, -- TODO: docs
+    htmlTSTag = { fg = colors[style].bright_red},
+    htmlTSTagAttribute = { fg = colors[style].yellow},
+    htmlTSText = { fg = colors[style].white}
 	}
 
 	return treesitter
