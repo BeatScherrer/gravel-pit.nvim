@@ -32,7 +32,7 @@ theme.loadSyntax = function(style)
 		Typedef = { fg = colors[style].bright_red }, -- A typedef
 		PreCondit = { fg = colors[style].bright_red }, -- preprocessor #if, #else, #endif, etc.
 		Repeat = { fg = colors[style].bright_red, style = styles.keywords }, -- italic any other keyword
-		String = { fg = colors[style].bright_cyan, style = styles.strings }, -- any string
+		String = { fg = colors[style].cyan, style = styles.strings }, -- any string
 		Special = { fg = colors[style].bright_red }, -- any special symbol
 		SpecialChar = { fg = colors[style].disabled }, -- special character in a constant
 		Tag = { fg = colors[style].bright_red }, -- you can use CTRL-] on this
@@ -76,6 +76,8 @@ theme.loadEditor = function(style)
 		NormalContrast = { fg = colors[style].fg, bg = colors[style].red }, -- a help group for contrast fileypes
 		FloatBorder = { fg = colors[style].yellow, bg = colors[style].float }, -- floating window border
 		ColorColumn = { fg = colors[style].green, bg = colors[style].float }, --  used for the columns set with 'colorcolumn'
+		VertSplit = { fg = colors[style].comments }, -- The column separating vertically split windows
+		WinSeparator = { fg = colors[style].comments }, -- Lines between window splits
 		Conceal = { fg = colors[style].disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = colors[style].bg_alt, bg = colors[style].cursor }, -- the character under the cursor
 		CursorIM = { fg = colors[style].bg_alt, bg = colors[style].cursor }, -- like Cursor, but used when in IME mode
@@ -138,8 +140,6 @@ theme.loadEditor = function(style)
 		DashboardCenter = { fg = colors[style].accent },
 		DashboardFooter = { fg = colors[style].green, style = "italic" },
 
-		VertSplit = { fg = colors[style].bright_black }, -- The column separating vertically split windows
-		WinSeparator = { fg = colors[style].bright_black }, -- Lines between window splits
 
 		-- Command line parameter menue
 		Pmenu = { fg = colors[style].fg, bg = colors[style].float },
@@ -231,7 +231,19 @@ theme.loadTreeSitter = function(style)
 		TSDanger = { fg = colors[style].error }, -- Text representation of a danger note.
     htmlTSTag = { fg = colors[style].bright_red},
     htmlTSTagAttribute = { fg = colors[style].yellow},
-    htmlTSText = { fg = colors[style].white}
+    htmlTSText = { fg = colors[style].white},
+
+    -- TSX
+    tsxTag = {fg = colors[style].bright_yellow},
+    tsxCloseTag = {fg = colors[style].bright_yellow},
+    tsxCloseString = {fg = colors[style].bright_yellow},
+    tsxTagName = {fg = colors[style].green},
+    tsxAttrib = {fg = colors[style].yellow},
+    tsxFragment = {fg = colors[style].green},
+    tsxIntrinsicTagName = {fg = colors[style].bright_red},
+    typescriptVariable = {fg = colors[style].bright_red},
+    typescriptTypeReference = {fg = colors[style].green},
+    typescriptStatementKeyword = {fg = colors[style].bright_red}
 	}
 
 	return treesitter
@@ -264,6 +276,10 @@ theme.loadLSP = function(style)
 		LspReferenceText = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "text" references
 		LspReferenceRead = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = colors[style].selection, style = "underline" }, -- used for highlighting "write" references
+		LspDiagnosticsError = { fg = colors[style].error },
+		LspDiagnosticsWarning = { fg = colors[style].yellow },
+		LspDiagnosticsInformation = { fg = colors[style].bright_blue },
+		LspDiagnosticsHint = { fg = colors[style].magenta },
 	}
 
 	return lsp
@@ -373,10 +389,6 @@ theme.loadPlugins = function(style)
 		NvimTreeMarkdownFile = { fg = colors[style].pink },
 		NvimTreeExecFile = { fg = colors[style].green },
 		NvimTreeSpecialFile = { fg = colors[style].magenta },
-		LspDiagnosticsError = { fg = colors[style].error },
-		LspDiagnosticsWarning = { fg = colors[style].yellow },
-		LspDiagnosticsInformation = { fg = colors[style].bright_blue },
-		LspDiagnosticsHint = { fg = colors[style].magenta },
 
 		-- Sidebar.nvim
 		SidebarNvimNormal = { fg = colors[style].fg },
