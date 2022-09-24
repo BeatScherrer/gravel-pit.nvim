@@ -140,7 +140,6 @@ theme.loadEditor = function(style)
 		DashboardCenter = { fg = colors[style].accent },
 		DashboardFooter = { fg = colors[style].green, style = "italic" },
 
-
 		-- Command line parameter menue
 		Pmenu = { fg = colors[style].fg, bg = colors[style].float },
 		PmenuSel = { fg = colors[style].bg, bg = colors[style].yellow }, -- Popup menu: selected item.
@@ -229,21 +228,27 @@ theme.loadTreeSitter = function(style)
 		TSURI = { fg = colors[style].link }, -- Any URI like a link or email.
 		TSMath = { fg = colors[style].blue }, -- Math environments like LaTeX's `$ ... $`
 		TSDanger = { fg = colors[style].error }, -- Text representation of a danger note.
-    htmlTSTag = { fg = colors[style].bright_red},
-    htmlTSTagAttribute = { fg = colors[style].yellow},
-    htmlTSText = { fg = colors[style].white},
+		htmlTSTag = { fg = colors[style].bright_red },
+		htmlTSTagAttribute = { fg = colors[style].yellow },
+		htmlTSText = { fg = colors[style].white },
 
-    -- TSX
-    tsxTag = {fg = colors[style].bright_yellow},
-    tsxCloseTag = {fg = colors[style].bright_yellow},
-    tsxCloseString = {fg = colors[style].bright_yellow},
-    tsxTagName = {fg = colors[style].green},
-    tsxAttrib = {fg = colors[style].yellow},
-    tsxFragment = {fg = colors[style].green},
-    tsxIntrinsicTagName = {fg = colors[style].bright_red},
-    typescriptVariable = {fg = colors[style].bright_red},
-    typescriptTypeReference = {fg = colors[style].green},
-    typescriptStatementKeyword = {fg = colors[style].bright_red}
+		-- TSX
+		tsxTag = { fg = colors[style].bright_yellow },
+		tsxCloseTag = { fg = colors[style].bright_yellow },
+		tsxCloseString = { fg = colors[style].bright_yellow },
+		tsxTagName = { fg = colors[style].green },
+		tsxAttrib = { fg = colors[style].yellow },
+		tsxFragment = { fg = colors[style].green },
+		tsxIntrinsicTagName = { fg = colors[style].bright_red },
+		typescriptVariable = { fg = colors[style].bright_red },
+		typescriptTypeReference = { fg = colors[style].green },
+		typescriptStatementKeyword = { fg = colors[style].bright_red },
+
+		-- XML
+		xmlTag = { fg = colors[style].bright_yellow },
+		xmlEndTag = { fg = colors[style].bright_red },
+		xmlTagName = { fg = colors[style].bright_red },
+		xmlAttrib = { fg = colors[style].yellow },
 	}
 
 	return treesitter
