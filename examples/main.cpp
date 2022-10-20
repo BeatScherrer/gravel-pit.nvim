@@ -6,6 +6,11 @@
 #include <iostream>
 
 namespace test_namespace {
+
+struct TestStruct {
+  int number;
+};
+
 template <typename T> class Example {
 public:
   Example(const T &t) : m_member(t) {}
@@ -24,6 +29,9 @@ int main(int argc, char **argv) {
   test_namespace::Example<int> example(4);
   std::cout << example.get() << std::endl;
   std::cout << "hello world" << std::endl;
+
+  test_namespace::TestStruct number;
+  number.number = 4;
 
   return 0;
 }

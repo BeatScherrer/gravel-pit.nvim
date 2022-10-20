@@ -173,61 +173,61 @@ theme.loadTreeSitter = function(style)
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		["attribute"] = { fg = colors[style].yellow }, -- (unstable) TODO: docs
-		["boolean"] = { fg = colors[style].orange }, -- For booleans.
-		["character"] = { fg = colors[style].orange }, -- For characters.
-		["comment"] = { fg = colors[style].comments, style = styles.comments }, -- For comment blocks.
-		["conditional"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords related to conditionnals.
-		["constructor"] = { fg = colors[style].blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["constant"] = { fg = colors[style].bright_yellow }, -- For constants
-		["constant.builtin"] = { fg = colors[style].bright_red }, -- For constant that are built in the language: `nil` in Lua.
-		["constant.macro"] = { fg = colors[style].bright_red }, -- For constants that are defined by macros: `NULL` in C.
-		["error"] = { fg = colors[style].error }, -- For syntax/parser errors.
-		["exception"] = { fg = colors[style].bright_red }, -- For exception related keywords.
-		["float"] = { fg = colors[style].orange }, -- For floats.
-		["field"] = { fg = colors[style].bright_green }, -- For fields.
-		["function"] = { fg = colors[style].blue, style = styles.functions }, -- For fuction (calls and definitions).
-		["function.builtin"] = { fg = colors[style].blue, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
-		["function.macro"] = { fg = colors[style].bright_red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		["include"] = { fg = colors[style].bright_red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["keyword"] = { fg = colors[style].bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
-		["keyword.function"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords used to define a fuction.
-		["keyword.operator"] = { fg = colors[style].brigth_red }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-		["keyword.return"] = { fg = colors[style].bright_red }, -- return keyword
-		["label"] = { fg = colors[style].bright_red }, -- For labels: `label:` in C and `:label:` in Lua.
-		["method"] = { fg = colors[style].bright_blue, style = styles.functions }, -- For method calls and definitions.
+		["@attribute"] = { fg = colors[style].yellow }, -- (unstable) TODO: docs
+		["@boolean"] = { fg = colors[style].orange }, -- For booleans.
+		["@character"] = { fg = colors[style].orange }, -- For characters.
+		["@comment"] = { fg = colors[style].comments, style = styles.comments }, -- For comment blocks.
+		["@conditional"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords related to conditionnals.
+		["@constructor"] = { fg = colors[style].blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@constant"] = { fg = colors[style].bright_yellow }, -- For constants
+		["@constant.builtin"] = { fg = colors[style].bright_red }, -- For constant that are built in the language: `nil` in Lua.
+		["@constant.macro"] = { fg = colors[style].bright_red }, -- For constants that are defined by macros: `NULL` in C.
+		["@error"] = { fg = colors[style].error }, -- For syntax/parser errors.
+		["@exception"] = { fg = colors[style].bright_red }, -- For exception related keywords.
+		["@float"] = { fg = colors[style].orange }, -- For floats.
+		["@field"] = { fg = colors[style].bright_green }, -- For fields.
+		["@function"] = { fg = colors[style].blue, style = styles.functions }, -- For fuction (calls and definitions).
+		["@function.builtin"] = { fg = colors[style].blue, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
+		["@function.macro"] = { fg = colors[style].bright_red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		["@include"] = { fg = colors[style].bright_red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@keyword"] = { fg = colors[style].bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
+		["@keyword.function"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords used to define a fuction.
+		["@keyword.operator"] = { fg = colors[style].brigth_red }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
+		["@keyword.return"] = { fg = colors[style].bright_red }, -- return keyword
+		["@label"] = { fg = colors[style].bright_red }, -- For labels: `label:` in C and `:label:` in Lua.
+		["@method"] = { fg = colors[style].bright_blue, style = styles.functions }, -- For method calls and definitions.
 		["@namespace"] = { fg = colors[style].bright_yellow }, -- For identifiers referring to modules and namespaces.
-		["number"] = { fg = colors[style].bright_red }, -- For all numbers
-		["operator"] = { fg = colors[style].bright_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
-		["parameter"] = { fg = colors[style].yellow }, -- For parameters of a function.
-		["parameter.reference"] = { fg = colors[style].yellow }, -- For references to parameters of a function.
-		["property"] = { fg = colors[style].bright_green }, -- Same as `TSField`,accesing for struct members in C.
-		["punctuation.delimiter"] = { fg = colors[style].bright_yellow }, -- For delimiters ie: `.`
-		["punctuation.bracket"] = { fg = colors[style].fg }, -- For brackets and parens.
-		["punctuation.special"] = { fg = colors[style].fg }, -- For special punctutation that does not fall in the catagories before.
-		["repeat"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords related to loops.
-		["string"] = { fg = colors[style].cyan, styles = styles.strings }, -- For strings.
-		["string.regex"] = { fg = colors[style].yellow }, -- For regexes.
-		["string.escape"] = { fg = colors[style].text }, -- For escape characters within a string.
-		["symbol"] = { fg = colors[style].yellow }, -- For identifiers referring to symbols or atoms.
-		["text.strong"] = { fg = colors[style].magenta, style = "bold" }, -- Text to be represented in bold.
-		["type"] = { fg = colors[style].green }, -- For types.
-		["type.builtin"] = { fg = colors[style].green }, -- For builtin types.
-		["tag"] = { fg = colors[style].bright_red }, -- Tags like html tag names.
-		["tag.delimiter"] = { fg = colors[style].cyan }, -- Tag delimiter like `<` `>` `/`
-		["tag.attribute"] = { fg = colors[style].gray }, -- HTML tag attributes.
-		["text"] = { fg = colors[style].fg }, -- For strings considered text in a markup language.
-		["text.reference"] = { fg = colors[style].yellow }, -- FIXME
-		["variable"] = { fg = colors[style].fg, style = styles.variables }, -- Any variable name that does not have another highlight.
-		["variable.builtin"] = { fg = colors[style].fg, style = styles.variables }, -- Variable names that are defined by the languages, like `this` or `self`.
-		["text.emphasis"] = { fg = colors[style].bright_blue }, -- For text to be represented with emphasis.
-		["text.underline"] = { fg = colors[style].fg, style = "underline" }, -- For text to be represented with an underline.
+		["@number"] = { fg = colors[style].bright_red }, -- For all numbers
+		["@operator"] = { fg = colors[style].bright_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"] = { fg = colors[style].yellow }, -- For parameters of a function.
+		["@parameter.reference"] = { fg = colors[style].yellow }, -- For references to parameters of a function.
+		["@property"] = { fg = colors[style].bright_green }, -- Same as `TSField`,accesing for struct members in C.
+		["@punctuation.delimiter"] = { fg = colors[style].bright_yellow }, -- For delimiters ie: `.`
+		["@punctuation.bracket"] = { fg = colors[style].fg }, -- For brackets and parens.
+		["@punctuation.special"] = { fg = colors[style].fg }, -- For special punctutation that does not fall in the catagories before.
+		["@repeat"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords related to loops.
+		["@string"] = { fg = colors[style].cyan, styles = styles.strings }, -- For strings.
+		["@string.regex"] = { fg = colors[style].yellow }, -- For regexes.
+		["@string.escape"] = { fg = colors[style].text }, -- For escape characters within a string.
+		["@symbol"] = { fg = colors[style].yellow }, -- For identifiers referring to symbols or atoms.
+		["@text.strong"] = { fg = colors[style].magenta, style = "bold" }, -- Text to be represented in bold.
+		["@type"] = { fg = colors[style].green }, -- For types.
+		["@type.builtin"] = { fg = colors[style].green }, -- For builtin types.
+		["@tag"] = { fg = colors[style].bright_red }, -- Tags like html tag names.
+		["@tag.delimiter"] = { fg = colors[style].cyan }, -- Tag delimiter like `<` `>` `/`
+		["@tag.attribute"] = { fg = colors[style].gray }, -- HTML tag attributes.
+		["@text"] = { fg = colors[style].fg }, -- For strings considered text in a markup language.
+		["@text.reference"] = { fg = colors[style].yellow }, -- FIXME
+		["@variable"] = { fg = colors[style].fg, style = styles.variables }, -- Any variable name that does not have another highlight.
+		["@variable.builtin"] = { fg = colors[style].fg, style = styles.variables }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@text.emphasis"] = { fg = colors[style].bright_blue }, -- For text to be represented with emphasis.
+		["@text.underline"] = { fg = colors[style].fg, style = "underline" }, -- For text to be represented with an underline.
 		-- ["TSStrike"] =                  { fg = colors[style].fg,, style = 'strikethrough'}, -- For strikethrough text.
-		["text.title"] = { fg = colors[style].title, style = "bold" }, -- Text that is part of a title.
-		["text.literal"] = { fg = colors[style].fg }, -- Literal text.
-		["text.uri"] = { fg = colors[style].link }, -- Any URI like a link or email.
-		["text.math"] = { fg = colors[style].blue }, -- Math environments like LaTeX's `$ ... $`
-		["text.danger"] = { fg = colors[style].error }, -- Text representation of a danger note.
+		["@text.title"] = { fg = colors[style].title, style = "bold" }, -- Text that is part of a title.
+		["@text.literal"] = { fg = colors[style].fg }, -- Literal text.
+		["@text.uri"] = { fg = colors[style].link }, -- Any URI like a link or email.
+		["@text.math"] = { fg = colors[style].blue }, -- Math environments like LaTeX's `$ ... $`
+		["@text.danger"] = { fg = colors[style].error }, -- Text representation of a danger note.
 		htmlTSTag = { fg = colors[style].bright_red },
 		htmlTSTagAttribute = { fg = colors[style].yellow },
 		htmlTSText = { fg = colors[style].white },
