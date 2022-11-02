@@ -85,7 +85,7 @@ theme.loadEditor = function(style)
 		DiffAdd = { bg = colors[style].diff_add }, -- diff mode: Added line
 		DiffChange = { bg = colors[style].diff_mod }, --  diff mode: Changed line
 		DiffDelete = { bg = colors[style].diff_del }, -- diff mode: Deleted line
-		DiffText = { fg = colors[style].fg }, -- diff mode: Changed text within a changed line
+		DiffText = { bg = colors[style].diff_mod_text }, -- diff mode: Changed text within a changed line
 		ErrorMsg = { fg = colors[style].error }, -- error messages
 		Folded = { fg = colors[style].comments, style = "italic" }, -- line used for closed folds
 		FoldColumn = { fg = colors[style].blue }, -- 'foldcolumn'
@@ -329,6 +329,7 @@ theme.loadPlugins = function(style)
 		CmpItemKindSnippet = { fg = colors[style].green },
 
 		-- Diff
+		DiffText = { fg = colors[style].bright_red, bg = colors[style].green },
 		diffAdded = { fg = colors[style].green },
 		diffRemoved = { fg = colors[style].bright_reed },
 		diffChanged = { fg = colors[style].blue },
