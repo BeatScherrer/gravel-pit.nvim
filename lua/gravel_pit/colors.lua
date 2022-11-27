@@ -39,7 +39,8 @@ colors.DARK = {
 	bright_cyan = "#8abeb7",
 
 	diff_add = "#4e5031",
-	diff_mod = "#364a5a",
+	diff_mod = "#2e3f4d",
+	diff_mod_text = "#43525e",
 	diff_del = "#642828",
 }
 
