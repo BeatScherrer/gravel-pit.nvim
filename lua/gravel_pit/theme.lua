@@ -190,7 +190,7 @@ theme.loadTreeSitter = function(style)
     ["@function.builtin"] = { fg = colors[style].blue, style = styles.functions }, -- For builtin functions: `table.insert` in Lua.
     ["@function.macro"] = { fg = colors[style].bright_red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     ["@include"] = { fg = colors[style].bright_red }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    ["@keyword"] = { fg = colors[style].bright_yellow, style = styles.keywords }, -- For keywords that don't fall in previous categories.
+    ["@keyword"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords that don't fall in previous categories.
     ["@keyword.function"] = { fg = colors[style].bright_red, style = styles.keywords }, -- For keywords used to define a fuction.
     ["@keyword.operator"] = { fg = colors[style].brigth_red }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
     ["@keyword.return"] = { fg = colors[style].bright_red }, -- return keyword
@@ -214,12 +214,12 @@ theme.loadTreeSitter = function(style)
     ["@type"] = { fg = colors[style].green }, -- For types.
     ["@type.builtin"] = { fg = colors[style].green }, -- For builtin types.
     ["@tag"] = { fg = colors[style].bright_red }, -- Tags like html tag names.
-    ["@tag.delimiter"] = { fg = colors[style].cyan }, -- Tag delimiter like `<` `>` `/`
-    ["@tag.attribute"] = { fg = colors[style].gray }, -- HTML tag attributes.
+    ["@tag.delimiter"] = { fg = colors[style].gray }, -- Tag delimiter like `<` `>` `/`
+    ["@tag.attribute"] = { fg = colors[style].yellow }, -- HTML tag attributes.
     ["@text"] = { fg = colors[style].fg }, -- For strings considered text in a markup language.
     ["@text.reference"] = { fg = colors[style].yellow }, -- FIXME
     ["@variable"] = { fg = colors[style].fg, style = styles.variables }, -- Any variable name that does not have another highlight.
-    ["@variable.builtin"] = { fg = colors[style].fg, style = styles.variables }, -- Variable names that are defined by the languages, like `this` or `self`.
+    ["@variable.builtin"] = { fg = colors[style].bright_red, style = styles.keywords }, -- Variable names that are defined by the languages, like `this` or `self`.
     ["@text.emphasis"] = { fg = colors[style].bright_blue }, -- For text to be represented with emphasis.
     ["@text.underline"] = { fg = colors[style].fg, style = "underline" }, -- For text to be represented with an underline.
     -- ["TSStrike"] =                  { fg = colors[style].fg,, style = 'strikethrough'}, -- For strikethrough text.
@@ -285,6 +285,22 @@ theme.loadLSP = function(style)
     LspDiagnosticsWarning = { fg = colors[style].yellow },
     LspDiagnosticsInformation = { fg = colors[style].bright_blue },
     LspDiagnosticsHint = { fg = colors[style].magenta },
+    ["@lsp.type.comment"] = theme.loadSyntax(style).Comment,
+    ["@lsp.type.class"] = theme.loadSyntax(style).Structure,
+    ["@lsp.type.class.typescript"] = theme.loadSyntax(style).Structure,
+    ["@lsp.type.decorator"] = theme.loadSyntax(style).Structure,
+    ["@lsp.type.enum"] = theme.loadSyntax(style).Structure,
+    ["@lsp.type.enumMember"] = theme.loadSyntax(style).Structure,
+    ["@lsp.type.function"] = theme.loadSyntax(style).Function,
+    ["@lsp.type.interface"] = theme.loadSyntax(style).Structure,
+    ["@lsp.type.macro"] = theme.loadSyntax(style).Macro,
+    ["@lsp.type.method"] = theme.loadTreeSitter(style)["@method"],
+    ["@lsp.type.namespace"] = theme.loadTreeSitter(style)["@namespace"],
+    ["@lsp.type.parameter"] = theme.loadTreeSitter(style)["@parameter"],
+    ["@lsp.type.property"] = theme.loadTreeSitter(style)["@property"],
+    ["@lsp.type.struct"] = theme.loadTreeSitter(style)["@type"],
+    ["@lsp.type.typeParameter"] = theme.loadTreeSitter(style)["@type"],
+    ["@lsp.type.variable"] = theme.loadTreeSitter(style)["@variable"],
   }
 
   return lsp
