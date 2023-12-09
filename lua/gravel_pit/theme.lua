@@ -111,8 +111,8 @@ theme.loadEditor = function(style)
 		StatusLineTerm = { fg = colors[style].fg, bg = colors[style].active }, -- status line of current terminal window
 		StatusLineTermNC = { fg = colors[style].disabled, bg = colors[style].bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLineFill = { fg = colors[style].fg, bg = colors[style].float }, -- tab pages line, where there are no labels
-		TablineSel = { fg = colors[style].cyan, bg = colors[style].float }, -- tab pages line, active tab page label
-		Tabline = { fg = colors[style].cyan, bg = colors[style].float },
+		TablineSel = { fg = colors[style].yellow, bg = colors[style].selection }, -- tab pages line, active tab page label
+		Tabline = { fg = colors[style].cyan, bg = colors[style].selection },
 		Title = { fg = colors[style].title, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { fg = colors[style].none, bg = colors[style].selection }, -- Visual mode selection
 		VisualNOS = { fg = colors[style].none, bg = colors[style].selection }, -- Visual mode selection when vim is "Not Owning the Selection".
