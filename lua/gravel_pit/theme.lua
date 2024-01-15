@@ -8,7 +8,7 @@ theme.loadSyntax = function(style)
 
   local syntax = {
     Type = { fg = colors[style].bright_red }, -- int, long, char, etc.
-    StorageClass = { fg = colors[style].cyan }, -- static, register, volatile, etc.
+    StorageClass = { fg = colors[style].bright_yellow }, -- static, register, volatile, etc.
     Structure = { fg = colors[style].bright_yellow }, -- struct, union, enum, etc.
     Comment = { fg = colors[style].comments, style = styles.comments }, -- italic comments
     SpecialComment = { fg = colors[style].comments, style = styles.comments }, -- special things inside a comment
